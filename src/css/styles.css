@@ -24,5 +24,6 @@
   -webkit-text-size-adjust: 100%;
 } */
 @import url('./reset.css');
+@import url('./fonts.css');
 @import url('./header.css');
 @import url('./fonds-ukraine.css');
