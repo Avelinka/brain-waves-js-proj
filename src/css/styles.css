@@ -4,7 +4,7 @@
   | default @import url()
   |============================
 */
-@import url('./reset.css');
+/* @import url('./reset.css');
 @import url('./vite-promo.css');
 @import url('./header.css');
 
@@ -22,4 +22,5 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
+} */
+@import url('./fonds-ukraine.css');
