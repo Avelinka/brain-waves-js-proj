@@ -46,7 +46,7 @@ export async function getInformationBtId(id) {
             throw new Error(response)
         }
         return bookInformation
-    } catch {
+    } catch (error){
         //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
         console.log(error)
     }
@@ -62,7 +62,7 @@ export async function getTopBooks() {
             throw new Error(response)
         }
         return topBooksList
-    } catch {
+    } catch (error){
         //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
         console.log(error)
     }
