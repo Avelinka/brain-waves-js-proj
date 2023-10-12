@@ -8,15 +8,14 @@ export async function getBookCategories() {
     try {
         const response = await axios.get(`${URL}category-list`)
         if (response.status !== 200) {
-        throw new Error(response)
+        throw new Error(`Request failed with status: ${response.status}`)
         }
         const categoriesList = response.data
-        console.log(categoriesList)
         return categoriesList
     }
     catch (error) {
         //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
-        console.log (error)
+        console.log (error.message)
     }
 };
 
@@ -26,13 +25,13 @@ export async function getBooksByCategory(selectedCategory) {
     try {
         const response = await axios.get(`${URL}category?category=${selectedCategory}`)
         if (response.status !== 200) {
-            throw new Error(response)
+            throw new Error(`Request failed with status: ${response.status}`)
         }
         const booksByCategory = response.data
         return booksByCategory // масив обʼєктів
     } catch (error) {
         //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
-        console.log(error)
+        console.log(error.message)
     }
 }
 
@@ -42,13 +41,13 @@ export async function getInformationBtId(id) {
     try {
         const response = await axios.get(`${URL}${id}`)
         if (response.status !== 200) {
-            throw new Error(response)
+            throw new Error(`Request failed with status: ${response.status}`)
         }
         const bookInformation = response.data
         return bookInformation
     } catch (error){
         //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
-        console.log(error)
+        console.log(error.message)
     }
 }
 
@@ -58,12 +57,12 @@ export async function getTopBooks() {
     try {
         const response = await axios.get(`${URL}top-books`)
         if (response.status !== 200) {
-            throw new Error(response)
+            throw new Error(`Request failed with status: ${response.status}`)
         }
         const topBooksList = response.data
         return topBooksList
     } catch (error){
         //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
-        console.log(error)
+        console.log(error.message)
     }
 }
