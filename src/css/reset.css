@@ -1,4 +1,17 @@
-/* Reset styles */
+:root {
+  --white: #fff;
+  --yellow: #eac645;
+  --violet: #4f2ee8;
+  --black-1: #202024;
+  --black: #111;
+}
+
+body {
+  background-color: #f6f6f6;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--black);
+}
+
 h1,
 h2,
 h3,
@@ -7,10 +20,6 @@ h5,
 h6,
 p {
   margin: 0;
-}
-
-p:last-child {
-  margin-bottom: 0;
 }
 
 ul {
@@ -32,4 +41,26 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.container {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
