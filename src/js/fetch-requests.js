@@ -7,10 +7,10 @@ const URL = 'https://books-backend.p.goit.global/books/'
 export async function getBookCategories() {
     try {
         const response = await axios.get(`${URL}category-list`)
-        const categoriesList = await response.data
         if (response.status !== 200) {
         throw new Error(response)
         }
+        const categoriesList = response.data
         console.log(categoriesList)
         return categoriesList
     }
@@ -25,10 +25,10 @@ export async function getBookCategories() {
 export async function getBooksByCategory(selectedCategory) {
     try {
         const response = await axios.get(`${URL}category?category=${selectedCategory}`)
-        const booksByCategory = await response.data
         if (response.status !== 200) {
             throw new Error(response)
         }
+        const booksByCategory = response.data
         return booksByCategory // масив обʼєктів
     } catch (error) {
         //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
@@ -41,10 +41,10 @@ export async function getBooksByCategory(selectedCategory) {
 export async function getInformationBtId(id) {
     try {
         const response = await axios.get(`${URL}${id}`)
-        const bookInformation = await response.data
         if (response.status !== 200) {
             throw new Error(response)
         }
+        const bookInformation = response.data
         return bookInformation
     } catch (error){
         //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
@@ -57,10 +57,10 @@ export async function getInformationBtId(id) {
 export async function getTopBooks() {
     try {
         const response = await axios.get(`${URL}top-books`)
-        const topBooksList = await response.data
         if (response.status !== 200) {
             throw new Error(response)
         }
+        const topBooksList = response.data
         return topBooksList
     } catch (error){
         //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
