@@ -1,4 +1,5 @@
 import axios from "axios";
+import Notiflix from 'notiflix';
 
 const URL = 'https://books-backend.p.goit.global/books/'
 
@@ -8,14 +9,16 @@ export async function getBookCategories() {
     try {
         const response = await axios.get(`${URL}category-list`)
         if (response.status !== 200) {
-        throw new Error(`Request failed with status: ${response.status}`)
+            Notiflix.Notify.failure('Error fetching category-list. Please try again later.')
+            throw new Error(`Request failed with status: ${response.status}`)
         }
         const categoriesList = response.data
         return categoriesList
     }
     catch (error) {
-        //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
-        console.log (error.message)
+        Notiflix.Notify.failure('Error fetching category-list. Please try again later')
+        console.log(error.message)
+        return
     }
 };
 
@@ -30,8 +33,9 @@ export async function getBooksByCategory(selectedCategory) {
         const booksByCategory = response.data
         return booksByCategory // масив обʼєктів
     } catch (error) {
-        //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
+        Notiflix.Notify.failure('Error fetching category-list. Please try again later')
         console.log(error.message)
+        return
     }
 }
 
@@ -45,9 +49,10 @@ export async function getInformationBtId(id) {
         }
         const bookInformation = response.data
         return bookInformation
-    } catch (error){
-        //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
+    } catch (error) {
+        Notiflix.Notify.failure('Error fetching category-list. Please try again later')
         console.log(error.message)
+        return
     }
 }
 
@@ -62,7 +67,8 @@ export async function getTopBooks() {
         const topBooksList = response.data
         return topBooksList
     } catch (error){
-        //ДОДАТИ ЗАГЛУШКУ ДЛЯ ПОМИЛКИ
+        Notiflix.Notify.failure('Error fetching category-list. Please try again later')
         console.log(error.message)
+        return
     }
 }
