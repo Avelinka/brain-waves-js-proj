@@ -10,7 +10,16 @@ async function home() {
         const topArr = await getTopBooks()
         const markup = await createCategoryMarkap(topArr)
         booksField.insertAdjacentHTML('beforeend', markup)
+        const moreBtn = document.querySelectorAll('.js-more-btn')
+        moreBtn.forEach(btn => btn.addEventListener('click', getAllBooksByCategory))
+      
     } catch (error) {
         console.log(error)
     }
+}
+
+
+function getAllBooksByCategory(evt) {
+    console.log('test. Далі має зʼявитись div Павла')
+    booksField.hidden = true
 }

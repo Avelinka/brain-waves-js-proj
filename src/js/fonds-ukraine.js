@@ -77,14 +77,14 @@ slides.forEach(slide => {
   slideList.appendChild(slide);
 });
 
-//const Slider = new Splide('#sliderOne', {
-//perPage: 6,
- // gap: '20px',
- // pagination: false,
- // direction: 'ttb',
- // height: '292px',
- // dynamicSlides: true,
- // rewind: true,
-//});
+const Slider = new Splide('#sliderOne', {
+perPage: 6,
+  gap: '20px',
+  pagination: false,
+  direction: 'ttb',
+  height: '292px',
+  dynamicSlides: true,
+  rewind: true,
+});
 
-//Slider.mount();
+Slider.mount();
