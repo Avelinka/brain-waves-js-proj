@@ -12,7 +12,7 @@ Notiflix needs to be appended to the "<`+s+'>" element, but you called it before
         <ul class="books-list">
             ${i}
         </ul>
-             <button class="more-btn js-more-btn" type="button">see more</button>
+             <button class="more-btn js-more-btn" type="button" data-category="${n.list_name}">see more</button>
          </div>`}).join("")}function Fs(t){return t.books.map(({_id:n,author:i,book_image:o,title:a})=>` <li class="book-card js-book-card" data-id="${n}">
                 <img class = "book-img" src="${o}" alt="${a}">
                 <h4 class="book-name">${a}</h4>
