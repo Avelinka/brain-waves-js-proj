@@ -15,7 +15,7 @@ export async function createCategoryMarkap(arr) {
         <ul class="books-list">
             ${oneCategory}
         </ul>
-             <button class="more-btn js-more-btn" type="button">see more</button>
+             <button class="more-btn js-more-btn" type="button" data-category="${categoryObj.list_name}">see more</button>
          </div>`
     }).join('')
         return markup

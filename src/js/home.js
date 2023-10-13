@@ -5,7 +5,7 @@ import { getTopBooks } from "./fetch-requests"
 const booksField = document.querySelector('.js-books-field-wrapper')
 
 home()
-async function home() {
+export async function home() {
     try {
         const topArr = await getTopBooks()
         const markup = await createCategoryMarkap(topArr)
