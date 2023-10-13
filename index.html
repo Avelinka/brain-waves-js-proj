@@ -14,14 +14,51 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/brain-waves-js-proj/assets/index-e8852dd1.js"></script>
-    <link rel="modulepreload" crossorigin href="/brain-waves-js-proj/assets/shopping-list-9bc618ac.js">
-    <link rel="stylesheet" href="/brain-waves-js-proj/assets/shopping-list-6af81e6b.css">
+    <script type="module" crossorigin src="/brain-waves-js-proj/assets/index-7ad8cae7.js"></script>
+    <link rel="modulepreload" crossorigin href="/brain-waves-js-proj/assets/shopping-list-b62840ed.js">
+    <link rel="stylesheet" href="/brain-waves-js-proj/assets/shopping-list-20955d83.css">
     <link rel="stylesheet" href="/brain-waves-js-proj/assets/index-c9270fae.css">
   </head>
   <body>
     <header class="header">
-  <div class="header-container"></div>
+  <div class="header-container container">
+    <div class="logo-wraper">
+      <a href="../index.html" class="header-logo">
+        <svg class="logo-icon" width="24" height="24">
+          <use href=""></use>
+        </svg>
+        <svg class="header-logo-text-icon" width="24" height="24">
+          <use href=""></use>
+        </svg>
+      </a>
+    </div>
+    <nav class="header-menu">
+      <ul class="header-menu-list">
+        <li class="page-item current-item">
+          <a class="page-link" href="">HOME</a>
+        </li>
+        <li class="page-item current-item">
+          <a class="page-link" href="">SHOPPINGLIST</a>
+          <svg class="shopping-bag-icon" width="20" height="20">
+            <use href=""></use>
+          </svg>
+        </li>
+      </ul>
+    </nav>
+    <div class="toggle-container">
+      <div class="switcher-container">
+        <label id="switch" class="switcher">
+          <input type="checkbox" onchange="toggleTheme()" id="toggle-slider" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <button type="button" class="menu-icon js-open-menu">
+        <svg class="gamburger-icon" width="24" height="24">
+          <use href=""></use>
+        </svg>
+      </button>
+    </div>
+  </div>
 </header>
 
     <!-- місце під мобільне меню -->
