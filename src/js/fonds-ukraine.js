@@ -1,9 +1,7 @@
-
 const funds = [
   {
     title: 'Save the Children',
-    url:
-      'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
+    url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
     img: 'images/1.png',
   },
   {
@@ -48,17 +46,20 @@ const funds = [
   },
 ];
 
-
-funds.sort((a, b) => (a.title === 'UNITED24' ? 1 : b.title === 'UNITED24' ? -1 : 0));
+funds.sort((a, b) =>
+  a.title === 'UNITED24' ? 1 : b.title === 'UNITED24' ? -1 : 0
+);
 
 const slideList = document.querySelector('.splide__list');
 const slides = [];
 
-funds.forEach((fund) => {
+funds.forEach(fund => {
   const slide = document.createElement('li');
   slide.className = 'splide__slide';
   const fundLink = document.createElement('a');
   fundLink.href = fund.url;
+  fundLink.target = '_blank'; // Відкривати посилання у новому вікні
+  fundLink.rel = 'noopener noreferrer'; // Забезпечувати безпеку
   fundLink.textContent = fund.title;
 
   if (fund.img) {
@@ -72,7 +73,7 @@ funds.forEach((fund) => {
   slides.push(slide);
 });
 
-slides.forEach((slide) => {
+slides.forEach(slide => {
   slideList.appendChild(slide);
 });
 
