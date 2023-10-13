@@ -1,1 +1,22 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  border: 1.5px solid #111;
+  border-radius: 0 0 8px 8px;
+}
 
+.logo-wraper {
+  display: flex;
+  align-items: center;
+  height: 28px;
+}
+
+.header-menu {
+  display: none;
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: right;
+}
