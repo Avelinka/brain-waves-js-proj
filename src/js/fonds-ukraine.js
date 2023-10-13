@@ -1,3 +1,16 @@
+import Splide from '@splidejs/splide';
+// Default theme
+import '@splidejs/splide/css';
+
+
+
+import '@splidejs/splide/css/skyblue';
+
+
+
+
+
+
 const funds = [
   {
     title: 'Save the Children',
@@ -58,8 +71,8 @@ funds.forEach(fund => {
   slide.className = 'splide__slide';
   const fundLink = document.createElement('a');
   fundLink.href = fund.url;
-  fundLink.target = '_blank'; // Відкривати посилання у новому вікні
-  fundLink.rel = 'noopener noreferrer'; // Забезпечувати безпеку
+  fundLink.target = '_blank';
+  fundLink.rel = 'noopener noreferrer';
   fundLink.textContent = fund.title;
 
   if (fund.img) {
