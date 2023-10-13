@@ -14,6 +14,7 @@ function openModal() {
   window.addEventListener('click', outsideClick);
 
   modal.style.display = 'block';
+  document.body.classList.add("modal-open");
 
   setTimeout(() => {
     modalStyle.style.opacity = 1;
@@ -40,6 +41,7 @@ function closeModal() {
     setTimeout(() => {
       modal.style.display = "none";
     }, 200);
+    document.body.classList.remove("modal-open");
 }
 
 // Опрацювання кнопки для додавання і видалення товару
@@ -80,3 +82,8 @@ function addBookShopingList() {
 function removeBookShopingList() {
   localStorage.removeItem("shoping-list");
 }
+
+
+// Отримання ID з обєкта
+
+
