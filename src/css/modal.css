@@ -1,0 +1,210 @@
+/* 320 */
+
+.backdrop-modal {
+  display: none;
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.4);
+
+  overflow-y: auto;
+
+  transition: opacity 0.3s;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  max-width: 335px;
+  max-height: 806px;
+  background-color: var(--white);
+
+  border-radius: 18px;
+  border: 2px solid var(--black);
+
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.container-modal {
+  padding: 40px 24px;
+}
+
+.button-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+
+.modal-img {
+  min-width: 287px;
+  height: 408px;
+  border-radius: 8px;
+}
+
+.book-header-modal {
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.64px;
+  margin: 14px 0 0;
+}
+
+.book-author-modal {
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.16;
+  letter-spacing: -0.48px;
+  margin: 4px 0 0;
+}
+
+.book-description-modal {
+  color: var(--black);
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.56px;
+
+  max-width: 287px;
+  margin: 18px 0 0;
+}
+
+/* .marketplace-img-modal-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 14px 0 0;
+} */
+
+/* .marketplace-img-modal {
+  width: 62px;
+  height: 19px;
+  padding-right: 20px;
+} */
+
+/* .book-img-modal {
+  width: 33px;
+  height: 32px;
+} */
+
+.shopping-button-modal {
+  display: block;
+
+  padding: 14px 28px;
+
+  border-radius: 40px;
+  border: 2px solid var(--violet);
+
+  margin: 44px auto 0;
+
+  background-color: var(--white);
+
+  color: var(--black);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.add-book-modal,
+.remove-book-modal {
+  margin: 0;
+}
+
+.text-after-buy {
+  color: rgba(17, 17, 17, 0.5);
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+
+  max-width: 242px;
+
+  margin: 8px auto 0;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    min-width: 579px;
+    min-height: 465px;
+  }
+
+  .container-modal {
+    padding: 40px;
+  }
+
+  .button-close {
+    top: 24px;
+    right: 24px;
+  }
+
+  .modal-img {
+    min-width: 192px;
+    height: 281px;
+  }
+
+  .modal-img-wrapper {
+    margin-right: 24px;
+  }
+
+  .book-inform-modal-wraper {
+    display: flex;
+  }
+
+  .book-header-modal {
+    margin: 0;
+
+    font-size: 24px;
+    line-height: 1.16;
+    letter-spacing: -0.96px;
+  }
+
+  .book-author-modal {
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+    margin: 8px 0 0;
+  }
+
+  .book-description-modal {
+    margin: 20px 0 0;
+  }
+
+  /* .marketplace-img-modal-wrapper {
+    margin: 20px 0 0;
+  } */
+
+  .shopping-button-modal {
+    /* замість 96px має бути 100, але так воно ламається
+    ще думаю, як це виправити */
+    padding: 20px 96px;
+
+
+    margin: 40px auto 0;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.33;
+    letter-spacing: -0.18px;
+  }
+
+  .text-after-buy {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: -0.48px;
+
+    max-width: 324px;
+    margin: 8px auto 0;
+  }
+}
