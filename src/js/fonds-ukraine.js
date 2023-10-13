@@ -91,7 +91,7 @@ slides.forEach(slide => {
 });
 
 const Slider = new Splide('#sliderOne', {
-  perPage: 6,
+perPage: 6,
   gap: '20px',
   pagination: false,
   direction: 'ttb',
