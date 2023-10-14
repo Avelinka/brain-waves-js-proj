@@ -130,7 +130,7 @@ body.modal-open {
   cursor: pointer;
 }
 
-.shopping-button-modal:hover, .shopping-button-modal:focus {
+.shopping-button-modal:hover {
   background-color: var(--violet);
   color: var(--white);
 }
