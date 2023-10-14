@@ -4,6 +4,8 @@
   --violet: #4f2ee8;
   --black-1: #202024;
   --black: #111;
+  --grey: #B4AFAF;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {

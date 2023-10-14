@@ -10,8 +10,9 @@ export async function home() {
         const topArr = await getTopBooks()
         const markup = await createCategoryMarkap(topArr)
         booksField.insertAdjacentHTML('beforeend', markup)
+        //забрали кнопку see more повісили слухач
         const moreBtn = document.querySelectorAll('.js-more-btn')
-        moreBtn.forEach(btn => btn.addEventListener('click', getAllBooksByCategory))
+        moreBtn.forEach(btn => btn.addEventListener('click', getAllBooksByCategory))  
       
     } catch (error) {
         console.log(error)
