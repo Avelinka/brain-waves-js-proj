@@ -88,6 +88,11 @@
     line-height: 1.16;
     letter-spacing: -0.04em;
     color: #B4AFAF;
+    display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 .more-btn {
