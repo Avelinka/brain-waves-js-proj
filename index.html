@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <link rel="icon" type="image/svg+xml" href="/brain-waves-js-proj/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookshelf</title>
     <link
@@ -14,9 +14,9 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/brain-waves-js-proj/assets/index-948e7772.js"></script>
-    <link rel="modulepreload" crossorigin href="/brain-waves-js-proj/assets/shopping-list-27696677.js">
-    <link rel="stylesheet" href="/brain-waves-js-proj/assets/shopping-list-f2db2b4a.css">
+    <script type="module" crossorigin src="/brain-waves-js-proj/assets/index-d34ee2fc.js"></script>
+    <link rel="modulepreload" crossorigin href="/brain-waves-js-proj/assets/shopping-list-24eb8132.js">
+    <link rel="stylesheet" href="/brain-waves-js-proj/assets/shopping-list-fe68352b.css">
     <link rel="stylesheet" href="/brain-waves-js-proj/assets/index-c9270fae.css">
   </head>
   <body>
@@ -25,10 +25,13 @@
     <div class="logo-wraper">
       <a href="../index.html" class="header-logo">
         <svg class="logo-icon" width="24" height="24">
-          <use href=""></use>
+          <use href="/brain-waves-js-proj/assets/sprite-a52b9df8.svg#icon-logo"></use>
         </svg>
-        <svg class="header-logo-text-icon" width="24" height="24">
-          <use href=""></use>
+        <svg class="header-logo-text" width="77" height="14">
+          <use
+            class="header-logo-text-icon"
+            href="/brain-waves-js-proj/assets/sprite-a52b9df8.svg#icon-logo-text"
+          ></use>
         </svg>
       </a>
     </div>
@@ -53,8 +56,8 @@
         </label>
       </div>
       <button type="button" class="menu-icon js-open-menu">
-        <svg class="gamburger-icon" width="24" height="24">
-          <use href=""></use>
+        <svg class="gamburger-icon" width="28" height="28">
+          <use href="/brain-waves-js-proj/assets/sprite-a52b9df8.svg#icon-x-close"></use>
         </svg>
       </button>
     </div>
@@ -63,9 +66,10 @@
 
     <!-- місце під мобільне меню -->
     <main>
-      <div class="container">
-        <div class="side-bar-wrapper">
-          <div class="all-category">
+      <section class="main-page-wrapper">
+        <div class="container flex-container">
+          <div class="side-bar-wrapper">
+            <div class="all-category">
   <ul class="all-category__list">
     <li>
       <button
@@ -227,42 +231,47 @@
   </ul>
 </div>
 
-          <section id="sliderOne" class="splide" aria-label="Splide Basic HTML Example">
+            <section id="sliderOne" class="splide" aria-label="Splide Basic HTML Example">
   <div class="main-fonds">
-      <div class="support-block">
-          <h2 class="support-text">Support Ukraine</h2>
-          <img src="images/Group 2.svg" alt="trident" width="20" height="32" class="support-img">
-      </div>
-      <div class="splide__track">
-          <ul class="splide__list">
-              
-          </ul>
-      </div>
-      <div class="splide__arrows">
-          <button class="splide__arrow splide__arrow--prev">
-              <svg class="icon icon-slider">
-                <use xlink:href="#icon-slider"></use>
-              </svg>
-          </button>
-      </div>
+    <div class="support-block">
+      <h2 class="support-text">Support Ukraine</h2>
+      <img
+        src="/brain-waves-js-proj/assets/group_2-d0555d30.svg"
+        alt="trident"
+        width="20"
+        height="32"
+        class="support-img"
+      />
+    </div>
+    <div class="splide__track">
+      <ul class="splide__list"></ul>
+    </div>
+    <div class="splide__arrows">
+      <button class="splide__arrow splide__arrow--prev">
+        <svg class="icon icon-slider">
+          <use xlink:href="#icon-slider"></use>
+        </svg>
+      </button>
+    </div>
   </div>
 </section>
 <!-- <script type="module" src="fonds-ukraine.js"></script> -->
 
-        </div>
-        <div class="card-wrapper">
-          <div id="field-categories">
+          </div>
+          <div class="card-wrapper">
+            <div class="books-field-wrapper js-books-field-wrapper">
+    <h2 class="book-field-name">Best Sellers Books</h2>
+
+</div>
+            <div id="field-categories">
     <h2 class="field-title"></h2>
     <ul class="field-books">
       <!-- поле для додавання книг при кліку на будь-яку категорію -->
     </ul>
   </div>
-          <div class="books-field-wrapper js-books-field-wrapper">
-    <h2 class="book-field-name">Best Sellers Books</h2>
-
-</div>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
     <!-- місце під модалку -->
     <!-- Кнопка для відображення тестової модалки
@@ -320,7 +329,7 @@
 
     <!-- місце під кнопку "up" -->
 
-    <script src="splide/splide.min.js"></script>
+    <!-- <script src="splide/splide.min.js"></script> -->
     
   </body>
 </html>
