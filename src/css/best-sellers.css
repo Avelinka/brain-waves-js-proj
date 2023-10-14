@@ -6,7 +6,7 @@
 .book-field-name {
     font-weight: 700;
     font-size: 32px;
-    line-height: 0.84;
+    line-height: 1.22;
     letter-spacing: -0.04em;
     margin-bottom: 40px;
 }
@@ -14,7 +14,7 @@
 .category-titel {
     font-size: 14px;
     font-weight: 400;
-    line-height: 0.78;
+    line-height: 1.28;
     letter-spacing: 0.03em;
     color: #B4AFAF;
     margin-bottom: 18px;
@@ -49,7 +49,7 @@
     text-transform: uppercase;
     font-weight: 500;
     font-size: 14px;
-    line-height: 0.78;
+    line-height: 1.28;
     letter-spacing: -0.04em;
 
     transform: translateY(100%);
@@ -71,17 +71,21 @@
 .book-name {
     font-weight: 700;
     font-size: 16px;
-    line-height: 0.88;
+    line-height: 1.12;
     letter-spacing: -0.04em;
     margin-bottom: 4px;
-
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 .author {
     font-size: 12px;
     font-weight: 400;
     font-style: italic;
-    line-height: 0.86;
+    line-height: 1.16;
     letter-spacing: -0.04em;
     color: #B4AFAF;
 }
@@ -96,7 +100,7 @@
     background-color: white;
     font-weight: 700;
     font-size: 14px;
-    line-height: 0.78;
+    line-height: 1.28;
     letter-spacing: -0.01em;
     text-transform: uppercase;
 }
@@ -108,7 +112,7 @@
         margin-bottom: 40px;
     }
     .category-titel {
-        line-height: 0.58;
+        line-height: 1.71;
         }
     .book-card:nth-child(-n + 3) {
         display: block;

@@ -12,11 +12,7 @@ export async function home() {
         booksField.insertAdjacentHTML('beforeend', markup)
         //забрали кнопку see more повісили слухач
         const moreBtn = document.querySelectorAll('.js-more-btn')
-        moreBtn.forEach(btn => btn.addEventListener('click', getAllBooksByCategory))
-
-        //забрали назву книги, повісили слухач і приховали частину
-        const bookName = document.querySelectorAll('.book-name')
-        
+        moreBtn.forEach(btn => btn.addEventListener('click', getAllBooksByCategory))  
       
     } catch (error) {
         console.log(error)
@@ -27,8 +23,4 @@ export async function home() {
 function getAllBooksByCategory(evt) {
     console.log('test. Далі має зʼявитись div Павла')
     booksField.hidden = true
-}
-
-function cutBookName(arr) {
-    const tooLongNames = arr.filter((name) => name.length > 9)
 }
