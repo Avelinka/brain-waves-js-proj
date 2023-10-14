@@ -16,7 +16,7 @@
     font-weight: 400;
     line-height: 1.28;
     letter-spacing: 0.03em;
-    color: #B4AFAF;
+    color: var(--grey);
     margin-bottom: 18px;
 }
 
@@ -44,7 +44,7 @@
     height: 27%;
     padding-top: calc(27% / 2 + 7px);
 
-    background-color: #EAC645;
+    background-color: var(--yellow);
     border-radius: 0px 0px 8px 8px;
     text-transform: uppercase;
     font-weight: 500;
@@ -87,7 +87,7 @@
     font-style: italic;
     line-height: 1.16;
     letter-spacing: -0.04em;
-    color: #B4AFAF;
+    color: var(--grey);
     display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
@@ -100,9 +100,9 @@
     margin-right: 0;
     margin-left: auto;
     padding: 14px 28px 14px 28px;
-    border: 2px solid #4F2EE8;
+    border: 2px solid var(--violet);
     border-radius: 40px;
-    background-color: white;
+    background-color: var(--white);
     font-weight: 700;
     font-size: 14px;
     line-height: 1.28;
