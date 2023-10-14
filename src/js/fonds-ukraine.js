@@ -2,14 +2,7 @@ import Splide from '@splidejs/splide';
 // Default theme
 import '@splidejs/splide/css';
 
-
-
 import '@splidejs/splide/css/skyblue';
-
-
-
-
-
 
 const funds = [
   {
@@ -77,7 +70,7 @@ funds.forEach(fund => {
 
   if (fund.img) {
     const fundImage = document.createElement('img');
-    fundImage.src = fund.img;
+    fundImage.src = `./${fund.img}`;
     fundLink.textContent = '';
     fundLink.appendChild(fundImage);
   }
@@ -91,7 +84,7 @@ slides.forEach(slide => {
 });
 
 const Slider = new Splide('#sliderOne', {
-perPage: 6,
+  perPage: 6,
   gap: '20px',
   pagination: false,
   direction: 'ttb',
