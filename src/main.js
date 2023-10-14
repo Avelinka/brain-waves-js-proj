@@ -5,3 +5,4 @@ import './js/home';
 import './js/modal-markup';
 import './js/modal';
 import './js/shopping-list';
+import './js/all-categories';
