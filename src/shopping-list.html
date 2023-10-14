@@ -15,16 +15,32 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <include src="./partials/header.html"></include>
+    <include src="./partials/all-category.html"></include>
+    <include src="./partials/fonds-ukraine.html"></include>
+
     <main>
-      <div class="">
-        <section class="">
-          <h1 class="">Shopping <span class="">List</span></h1>
-          <div class="js-shopping-cart">
-            <ul class="js-cart-list"></ul>
-            <div id="pagination" class=""></div>
+      <div class="shopping-div">
+        <div class="shopping-div-svg">
+          <div class="shop-icons">
+            <p class="shopping">Shopping<span class="list"> List</span></p>
           </div>
-        </section>
+        </div>
+        <ul class="js-list shopping-list-section"></ul>
+        <div class="is-hidden cart">
+          <p class="empty-cart-notification">
+            This page is empty, add some books and proceed to order.
+          </p>
+          <img
+            src="./images/img_96061.png"
+            class="empty-cart-img"
+            alt="book"
+            width="265"
+            height="168"
+          />
+        </div>
       </div>
+    </div>
     </main>
 
     <script type="module" src="./js/shopping-list.js"></script>
