@@ -70,7 +70,7 @@ funds.forEach(fund => {
 
   if (fund.img) {
     const fundImage = document.createElement('img');
-    fundImage.src = `./${fund.img}`;
+    fundImage.src = fund.img;
     fundLink.textContent = '';
     fundLink.appendChild(fundImage);
   }
