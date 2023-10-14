@@ -1,0 +1,2 @@
+import Notiflix from 'notiflix';
+

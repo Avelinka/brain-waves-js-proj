@@ -1,3 +1,9 @@
+@media (min-width: 1440px) {
+  .splide {
+    width: 356px;
+  }
+}
+
 .splide__slide {
   min-height: 32px;
   background-color: transparent;
@@ -19,7 +25,7 @@
 
 .splide__slide {
   display: flex;
-  justify-content: flex-start; /* Прирівняйте до лівого краю */
+  justify-content: flex-start;
   align-items: center;
   gap: 16px;
 }
@@ -46,11 +52,10 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 20px; /* Додайте відступ між елементами */
+  gap: 20px;
   padding-left: 40px;
 }
-.splide__list {
-}
+
 .support-block {
   display: flex;
   padding-top: 24px;
@@ -60,8 +65,23 @@
 
 .splide__arrow.splide__arrow--prev {
   display: none;
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+}
+.splide__arrow.splide__arrow--next{
+  opacity: 10;
+  width: 32px;
+  height: 32px;
+  background: floralwhite;
+}
+
+.custom-splide-arrow {
+  width: 32px;
+  height: 32px;
+  fill: var(--color1, #fff);
+
+}
+.splide{
+  width: 335px;
+}
+.icon-slider{
+  rotate: 270deg;
 }

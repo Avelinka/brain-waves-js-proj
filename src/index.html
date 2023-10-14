@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookshelf</title>
     <link
@@ -17,29 +17,26 @@
   </head>
   <body>
     <load ="./partials/header.html" />
-    <!-- місце під мобільне меню -->
+    <load ="./partials/mobile-menu.html" />
     <main>
-      <div class="container">
-        <div class="side-bar-wrapper">
-          <load ="./partials/all-category.html" />
-          <load ="./partials/fonds-ukraine.html" />
+      <section class="main-page-wrapper">
+        <div class="container flex-container">
+          <div class="side-bar-wrapper">
+            <load ="./partials/all-category.html" />
+            <load ="./partials/fonds-ukraine.html" />
+          </div>
+          <div class="card-wrapper">
+            <load ="./partials/best-sellers.html" />
+            <load ="./partials/book-field.html" />
+          </div>
         </div>
-        <div class="card-wrapper">
-          <load ="./partials/book-field.html" />
-          <load ="./partials/best-sellers.html" />
-        </div>
-      </div>
+      </section>
     </main>
     <!-- місце під модалку -->
-    <!-- Кнопка для відображення тестової модалки
-    Потім видалю -->
-    <button type="button" class="js-button-modal" data-modal-open>
-      Модалка
-    </button>
     <load ="./partials/modal.html" />
     <!-- місце під кнопку "up" -->
 
-    <script src="splide/splide.min.js"></script>
+    <!-- <script src="splide/splide.min.js"></script> -->
     <script type="module" src="/main.js"></script>
   </body>
 </html>
