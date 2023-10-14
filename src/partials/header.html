@@ -1,31 +1,35 @@
 <header class="header">
   <div class="header-container container">
-    <div class="logo-wraper">
-      <a href="../index.html" class="header-logo">
-        <svg class="logo-icon" width="24" height="24">
-          <use href="../images/sprite.svg#icon-logo"></use>
-        </svg>
-        <svg class="header-logo-text" width="77" height="14">
-          <use
-            class="header-logo-text-icon"
-            href="../images/sprite.svg#icon-logo-text"
-          ></use>
-        </svg>
-      </a>
-    </div>
-    <nav class="header-menu">
-      <ul class="header-menu-list">
-        <li class="page-item current-item">
-          <a class="page-link" href="">HOME</a>
-        </li>
-        <li class="page-item current-item">
-          <a class="page-link" href="">SHOPPINGLIST</a>
-          <svg class="shopping-bag-icon" width="20" height="20">
-            <use href=""></use>
+    <div class="header-wraper">
+      <div class="logo-wraper">
+        <a href="../index.html" class="header-logo">
+          <svg class="logo-icon" width="24" height="24">
+            <use href="/images/sprite.svg#icon-logo"></use>
           </svg>
-        </li>
-      </ul>
-    </nav>
+          <svg class="header-logo-text" width="77" height="14">
+            <use
+              class="header-logo-text-icon"
+              href="/images/sprite.svg#icon-logo-text"
+            ></use>
+          </svg>
+        </a>
+      </div>
+      <nav class="header-menu">
+        <ul class="header-menu-list">
+          <li class="page-item current-page">
+            <a class="page-link" href="">HOME</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="">SHOPPINGLIST</a>
+          </li>
+        </ul>
+        <a class="shopping-bag-icon" href="">
+          <svg class="bag-icon" width="20" height="20">
+            <use href="/images/sprite.svg#icon-bag"></use>
+          </svg>
+        </a>
+      </nav>
+    </div>
     <div class="toggle-container">
       <div class="switcher-container">
         <label id="switch" class="switcher">
@@ -35,7 +39,7 @@
       </div>
       <button type="button" class="menu-icon js-open-menu">
         <svg class="gamburger-icon" width="28" height="28">
-          <use href="../images/sprite.svg#close"></use>
+          <use href="/images/sprite.svg#icon-gamburger"></use>
         </svg>
       </button>
     </div>
