@@ -23,8 +23,11 @@ export async function createCategoryMarkap(arr) {
      
  export function createBookMarkup(obj) {
     const markup = obj.books.map(({ _id, author, book_image, title }) => {
-         return ` <li class="book-card js-book-card" data-id="${_id}">
+        return ` <li class="book-card js-book-card" data-id="${_id}">
+                <div class="img-thumb">
                 <img class = "book-img" src="${book_image}" alt="${title}">
+                <div class="quick-view" data-id-book="${_id}"><p>quick view</p></div>
+                </div>
                 <h4 class="book-name">${title}</h4>
                 <p class="author">${author}</p>
             </li>`

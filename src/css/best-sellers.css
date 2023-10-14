@@ -22,15 +22,49 @@
 
 .book-list {
     margin-bottom: 8px;
+    
 }
 
 .book-card:not(:first-child) {
     display: none;
 }
 
-.book-img {
-    border-radius: 8px;
+.img-thumb {
+    position: relative;
+    overflow: hidden;
     margin-bottom: 14px;
+    text-align: center;
+    justify-content: center;
+}
+
+.quick-view {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 27%;
+    padding-top: calc(27% / 2 + 7px);
+
+    background-color: #EAC645;
+    border-radius: 0px 0px 8px 8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 0.78;
+    letter-spacing: -0.04em;
+
+    transform: translateY(100%);
+    transition: transform 250ms var(--cubic);
+}
+
+
+
+.book-card:hover .quick-view,
+.book-card:hover .quick-view {
+    transform: translateY(0);
+}
+
+.book-img {
+    border-radius: 8px; 
     max-width: 335px;
 }
 
@@ -40,6 +74,7 @@
     line-height: 0.88;
     letter-spacing: -0.04em;
     margin-bottom: 4px;
+
 }
 
 .author {
