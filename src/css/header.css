@@ -5,11 +5,17 @@ button {
 
 .header-container {
   display: flex;
+  height: 64px;
   justify-content: space-between;
   align-items: center;
-  height: 64px;
   border: 1.5px solid #111;
   border-radius: 0 0 8px 8px;
+}
+
+.header-wraper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 
 .logo-wraper {
@@ -35,6 +41,11 @@ button {
 .toggle-container {
   display: flex;
   justify-content: right;
+  align-items: center;
+}
+
+.switcher-container {
+  margin-top: 2px;
 }
 
 .switcher {
@@ -106,6 +117,55 @@ input:checked + .slider:before {
 }
 
 .menu-icon {
-  height: 22px;
+  height: 28px;
   margin-left: 14px;
+}
+
+.gamburger-icon:hover,
+.gamburger-icon:focus {
+  stroke: #4f2ee8;
+}
+
+@media screen and (min-width: 768px) {
+  .header-container {
+    height: 72px;
+  }
+
+  .header-logo {
+    padding: 24px 0;
+  }
+
+  .header-menu {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+  }
+
+  .header-menu-list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .page-item {
+    color: #111;
+    font-family: DM Sans;
+    font-weight: 500;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+  }
+
+  .current-page {
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 36px;
+    background: #eac645;
+  }
+
+  .shopping-bag-icon {
+    margin-left: 4px;
+    width: 20px;
+    height: 20px;
+  }
 }
