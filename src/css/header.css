@@ -119,10 +119,11 @@ input:checked + .slider:before {
 .menu-icon {
   height: 28px;
   margin-left: 14px;
+  stroke: #111;
 }
 
-.gamburger-icon:hover {
-  fill: #4f2ee8;
+.menu-icon:hover {
+  stroke: #4f2ee8;
 }
 
 @media screen and (min-width: 768px) {
@@ -131,7 +132,7 @@ input:checked + .slider:before {
   }
 
   .header-logo {
-    padding: 24px 0;
+    padding: 22px 0;
   }
 
   .header-menu {
@@ -170,5 +171,11 @@ input:checked + .slider:before {
 
   .menu-icon {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header-menu {
+    margin-left: 76px;
   }
 }
