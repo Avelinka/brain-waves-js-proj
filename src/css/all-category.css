@@ -5,6 +5,14 @@
   overflow: auto;
 }
 
+.first-word {
+  color:  var(--black);
+}
+
+.second-word {
+  color: var(--violet);
+}
+
 .more-btn {
   background-color: var(--bg-color);
   color: var(--black);

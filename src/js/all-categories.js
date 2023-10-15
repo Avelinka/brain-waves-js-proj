@@ -58,7 +58,10 @@ function resetDedicatedCategory() {
 export async function createMarkup(array, categoryName) {
   const oneBook = markup(array);
 
-  return `<h2 class="book-field-name">${categoryName}</h2> <ul class="field-books book-list"> ${oneBook}  </ul>`;
+  return `<h2 class="book-field-name">
+  <span class="first-word">${categoryName.split(' ')[0]}</span>
+  <span class="second-word">${categoryName.split(' ')[1]}</span>
+</h2> <ul class="field-books book-list"> ${oneBook}  </ul>`;
 }
 
 export function markup(array) {
