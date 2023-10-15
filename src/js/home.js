@@ -22,7 +22,7 @@ export async function home() {
     }
 }
 
-
+//по see more
 export async function getAllBooksByCategory(evt) {
     const getCategoryName = evt.currentTarget.dataset.category
     showAllBooksByCategory(getCategoryName)
@@ -30,4 +30,9 @@ export async function getAllBooksByCategory(evt) {
     selectedCategory.classList.add('dedicated-category')
     const allCategortBtn = document.querySelector('button[name="All categories"]')
     allCategortBtn.classList.remove('dedicated-category')
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
 }
