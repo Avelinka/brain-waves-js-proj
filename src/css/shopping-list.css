@@ -1,5 +1,3 @@
-@import url('./reset.css');
-
 .shopping {
   font-family: 'DM Sans', sans-serif;
   font-size: 32px;
@@ -140,13 +138,11 @@
   padding: 0 20px;
 }
 
-
 .hidden {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-
   .container-shops-list {
     padding-left: 32px;
   }
@@ -218,6 +214,7 @@
 
   .container-shops-list {
     padding-left: 40px;
+    background-color: var(--white);
   }
 
   .hidden-support-list {
@@ -272,7 +269,7 @@
 }
 
 /*dark*/
-/* .theme-dark .home-link {
+.theme-dark .home-link {
   color: var(--white);
 }
 
@@ -285,20 +282,20 @@
 }
 
 .theme-dark .empty-cart-notification {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .theme-dark .shopping-list-title {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .theme-dark .shopping-list-item {
-  background-color: #111111;
+  background-color: var(--black);
 }
 
 .theme-dark .shopping-list-text {
-  color: #ffffff;
-} */
+  color: var(--white);
+}
 
 .theme-dark {
   background-color: rgba(32, 32, 36, 1);

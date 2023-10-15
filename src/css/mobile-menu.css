@@ -64,7 +64,7 @@
 }
 
 .mobile-home {
-  color: #111;
+  color: var(--black);
   font-weight: 700;
   line-height: 1.29;
   letter-spacing: -0.04em;
@@ -94,4 +94,12 @@
   margin-left: 4px;
   margin-top: -2px;
   position: absolute;
+}
+
+.page-item {
+  color: var(--black);
+}
+
+.current-page {
+  color: #111;
 }
