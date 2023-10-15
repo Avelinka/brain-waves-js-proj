@@ -47,7 +47,7 @@ export async function showAllBooksByCategory(name) {
      
   const listMarkup = await createMarkup(getCategoryName, name);
   //console.log(listMarkup);
-  fieldBooks.innerHTML = listMarkup;
+  categoryField.innerHTML = listMarkup;
 }
 
 function resetDedicatedCategory() {
@@ -58,16 +58,19 @@ function resetDedicatedCategory() {
 export async function createMarkup(array, categoryName) {
   const oneBook = markup(array);
 
-  return `<h2 class="field-title">${categoryName}</h2> ${oneBook}`;
+  return `<h2 class="book-field-name">${categoryName}</h2> <ul class="field-books book-list"> ${oneBook}  </ul>`;
 }
 
 export function markup(array) {
   let markUp = array
     .map(({ author, title, book_image, _id }) => {
-      return `<li id="${_id}" class="books">
-            <img loading="lazy" src="${book_image}" alt="${title}" />
-            <h3>${title}</h3>
-            <p>${author}</p>
+      return `<li id="${_id}" class="books book-card">
+            <div class="img-thumb">
+            <img loading="lazy" class="book-img" src="${book_image}" alt="${title}" />
+            <div class="quick-view" data-id-book="${_id}"><p>quick view</p></div>
+            </div>
+            <h3 class="book-name">${title}</h3>
+            <p class="author">${author}</p>
            
         </li>`;
     })
