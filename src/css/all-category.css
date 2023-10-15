@@ -1,10 +1,13 @@
 .all-category {
   height: 228px;
 
-  width: 356px;
+  max-width: 335px;
   overflow: auto;
   @media screen and (min-width: 768px) {
     height: 472px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 356px;
   }
 }
 
