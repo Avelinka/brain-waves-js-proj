@@ -10,40 +10,44 @@ const fieldBooks = document.querySelector('.field-books');
 const sortFieldTitle = document.querySelector('.field-title');
 const booksList = document.querySelector('.books-list');
 const allBooksTitle = document.querySelector('.all-books-title');
-const categoryField = document.querySelector('.field-categories'); // дів для кожної категорії
-const booksField = document.querySelector('.books-field-wrapper');
+const categoryField = document.querySelector('.field-categories'); // лів Павла
+const booksField = document.querySelector('.books-field-wrapper'); // мій дів
 
 allList.addEventListener('click', sortForCategory);
 
 async function sortForCategory(event) {
   if (event.target.nodeName !== 'BUTTON') return;
   const categoryName = event.target.name;
-  console.log(categoryName);
+  //console.log(categoryName);
 
   try {
     if (categoryName === 'All categories') {
       resetDedicatedCategory();
       event.target.classList.add('dedicated-category');
-      getAllBooksByCategory();
+      booksField.hidden = false
+      categoryField.hidden = true
+      //getAllBooksByCategory();
       return;
     } else {
-      booksField.hidden = true;
-      categoryField.hidden = false;
-      //   allBooksTitle.style.display = 'none';
-      // sortFieldTitle.style.display = 'block';
-      const getCategoryName = await getBooksByCategory(categoryName);
-      console.log(getCategoryName);
-      //рпроблема
-      const listMarkup = await createMarkup(getCategoryName, categoryName);
-      console.log(listMarkup);
-      fieldBooks.innerHTML = listMarkup;
-
+      showAllBooksByCategory(categoryName)
       resetDedicatedCategory();
       event.target.classList.add('dedicated-category');
     }
   } catch (error) {
-    console.error(error.message);
+    Notiflix.Notify.failure('Sorry, there are no books matching your search query. Please try again.')
+    return
   }
+}
+
+export async function showAllBooksByCategory(name) {
+  booksField.hidden = true;
+  categoryField.hidden = false;
+
+  const getCategoryName = await getBooksByCategory(name);
+     
+  const listMarkup = await createMarkup(getCategoryName, name);
+  //console.log(listMarkup);
+  fieldBooks.innerHTML = listMarkup;
 }
 
 function resetDedicatedCategory() {
@@ -51,13 +55,13 @@ function resetDedicatedCategory() {
   dedicatedCategory.forEach(el => el.classList.remove('dedicated-category'));
 }
 
-async function createMarkup(array, categoryName) {
+export async function createMarkup(array, categoryName) {
   const oneBook = markup(array);
 
   return `<h2 class="field-title">${categoryName}</h2> ${oneBook}`;
 }
 
-function markup(array) {
+export function markup(array) {
   let markUp = array
     .map(({ author, title, book_image, _id }) => {
       return `<li id="${_id}" class="books">
@@ -68,6 +72,6 @@ function markup(array) {
         </li>`;
     })
     .join('');
-  console.log(markUp);
+  //console.log(markUp);
   return markUp;
 }

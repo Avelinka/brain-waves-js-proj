@@ -1,9 +1,10 @@
 //ВСІ НАЛШТУВАННЯ, ЩО МАЮТЬ БУТИ ПРИ ЗАВАНТАЖЕННІ СТОРІНКИ HOME
 import { createCategoryMarkap } from "./all-categories-books-field"
 import { getTopBooks } from "./fetch-requests"
+import {showAllBooksByCategory} from './all-categories'
 
-export const booksField = document.querySelector('.js-books-field-wrapper')
-const categoryField = document.querySelector('#field-categories')
+const booksField = document.querySelector('.js-books-field-wrapper')
+const categoryField = document.querySelector('.field-categories')
 
 home()
 export async function home() {
@@ -16,13 +17,13 @@ export async function home() {
         moreBtn.forEach(btn => btn.addEventListener('click', getAllBooksByCategory))  
       
     } catch (error) {
-        console.log(error)
+        Notiflix.Notify.failure('Sorry, there are no books matching your search query. Please try again.')
+        return
     }
 }
 
 
-export function getAllBooksByCategory(evt) {
-    console.log('test. Далі має зʼявитись div Павла')
-    booksField.hidden = false
-    categoryField.hidden = true
+export async function getAllBooksByCategory(evt) {
+    const getCategoryName = evt.currentTarget.dataset.category
+    showAllBooksByCategory(getCategoryName)
 }
