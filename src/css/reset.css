@@ -1,9 +1,9 @@
 :root {
-  font-synthesis: none;
+  /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; */
 
   --white: #fff;
   --yellow: #eac645;
@@ -18,7 +18,7 @@
   --black: #fff;
   --white: #111;
   --bg-color: #202024;
-  --second-text-color: #ffffff*60%;
+  --second-text-color: #ffffff * 60%;
 }
 
 body {
