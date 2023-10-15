@@ -16,19 +16,7 @@
     margin-top: 40px;
   }
 }
-.field-books {
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 
-    width: 704px;
-    flex-wrap: wrap;
-  }
-  @media screen and (min-width: 1440px) {
-    width: 996px;
-  }
-}
 
 /* Стилі динамічної розмітки */
 .books {

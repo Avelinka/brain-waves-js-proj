@@ -31,6 +31,10 @@
   display: none;
 }
 
+li.book-card.books {
+  display: block;
+}
+
 .img-thumb {
   position: relative;
   overflow: hidden;
@@ -139,6 +143,16 @@
     width: 218px;
     height: 316px;
   }
+  .book-list{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    column-gap: 24px;
+  }
+  li.book-card.books {
+    flex-basis: calc((100% - 48px) / 3);
+    margin: 0;
+  }
 }
 
 /*------------------------DESKTOP-------------------*/
@@ -154,4 +168,7 @@
     width: 180px;
     height: 256px;
   }
+li.book-card.books {
+  flex-basis: calc((100% - 96px) / 5);
+}
 }
