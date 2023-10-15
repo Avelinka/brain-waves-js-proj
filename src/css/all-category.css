@@ -6,10 +6,10 @@
 }
 
 .first-word {
-  color:  var(--black);
+  color: var(--black);
 }
 
-.second-word {
+.last-word {
   color: var(--violet);
 }
 
