@@ -1,20 +1,19 @@
 const btnUp = {
   el: document.querySelector('.btn-up'),
   show() {
-    this.el.classList.remove('btn-up_hide');
+    this.el.classList.remove('is-hidden');
   },
   hide() {
-       this.el.classList.add('btn-up_hide');
+    this.el.classList.add('is-hidden');
   },
   addEventListener() {
-       window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY || document.documentElement.scrollTop;
-      // если страница прокручена больше чем на 400px, то делаем кнопку видимой, иначе скрываем
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
       scrollY > 400 ? this.show() : this.hide();
     });
 
     document.querySelector('.btn-up').onclick = () => {
-       window.scrollTo({
+      window.scrollTo({
         top: 0,
         left: 0,
         behavior: 'smooth',

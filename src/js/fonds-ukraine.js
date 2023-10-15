@@ -48,7 +48,7 @@ const funds = [
   {
     title: 'World vision',
     url: 'https://www.wvi.org/emergencies/ukraine',
-    img: 'images/8-min.png',
+    img: 'images/8.png',
     img2x: 'images/8@2x.png',
   },
   {
