@@ -13,20 +13,275 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/brain-waves-js-proj/assets/shopping-list-97d82163.js"></script>
-    <link rel="stylesheet" href="/brain-waves-js-proj/assets/shopping-list-77a6f373.css">
+    <script type="module" crossorigin src="/brain-waves-js-proj/assets/shopping-list-3be1049d.js"></script>
+    <link rel="stylesheet" href="/brain-waves-js-proj/assets/shopping-list-aa894e0b.css">
   </head>
   <body>
-    <main>
-      <div class="">
-        <section class="">
-          <h1 class="">Shopping <span class="">List</span></h1>
-          <div class="js-shopping-cart">
-            <ul class="js-cart-list"></ul>
-            <div id="pagination" class=""></div>
-          </div>
-        </section>
+    <header class="header">
+  <div class="header-container container">
+    <div class="header-wraper">
+      <div class="logo-wraper">
+        <a href="./index.html" class="header-logo">
+          <svg class="logo-icon" width="24" height="24">
+            <use href="/brain-waves-js-proj/assets/sprite-a598f328.svg#icon-logo"></use>
+          </svg>
+          <svg class="header-logo-text" width="77" height="14">
+            <use
+              class="header-logo-text-icon"
+              href="/brain-waves-js-proj/assets/sprite-a598f328.svg#icon-logo-text"
+            ></use>
+          </svg>
+        </a>
       </div>
+      <nav class="header-menu">
+        <ul class="header-menu-list">
+          <li class="page-item current-page">
+            <a class="page-link" href="./index.html">Home</a>
+          </li>
+          <li class="page-item">
+            <div class="shopping-list-wrap">
+              <a class="page-link" href="./shopping-list.html">Shoppinglist</a>
+              <a class="shopping-bag-icon" href="./shopping-list.html">
+                <svg class="bag-icon" width="20" height="20">
+                  <use href="/brain-waves-js-proj/assets/sprite-a598f328.svg#icon-bag"></use>
+                </svg>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="toggle-container">
+      <div class="switcher-container">
+        <label id="switch" class="switcher">
+          <input type="checkbox" onchange="toggleTheme()" id="toggle-slider" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <button type="button" class="menu-icon js-open-menu">
+        <svg class="gamburger-icon" width="28" height="28">
+          <use href="/brain-waves-js-proj/assets/sprite-a598f328.svg#icon-gamburger"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+    <div class="all-category">
+  <ul class="all-category__list">
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        id="allCategoryBtn"
+        name="All categories"
+      >
+        All categories
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Combined Print and E-Book Fiction"
+      >
+        Combined Print and E-book Fiction
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Combined Print and E-Book Nonfiction"
+      >
+        Combined Print & E-book Nonfiction
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Hardcover Fiction"
+      >
+        Hardcover fiction
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Hardcover Nonfiction"
+      >
+        Hardcover nonfiction
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Trade Fiction Paperback"
+      >
+        Paperback trade fiction
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Paperback Nonfiction"
+      >
+        Paperback nonfiction
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Advice How-To and Miscellaneous"
+      >
+        Advice, how-to & Miscellaneous
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Childrens Middle Grade Hardcover"
+      >
+        Children’s middle grade hardcover
+      </button>
+    </li>
+    <li>
+      <button class="all-category__button" type="button" name="Series Books">
+        Series Books
+      </button>
+    </li>
+    <li>
+      <button class="all-category__button" type="button" name="Picture Books">
+        Picture Books
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Young Adult Hardcover"
+      >
+        Young Adult Hardcover
+      </button>
+    </li>
+
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Middle Grade Paperback Monthly"
+      >
+        Middle Grade Paperback Monthly
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Mass Market Monthly"
+      >
+        Mass Market Monthly
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Audio Nonfiction"
+      >
+        Audio Nonfiction
+      </button>
+    </li>
+    <li>
+      <button class="all-category__button" type="button" name="Audio Fiction">
+        Audio Fiction
+      </button>
+    </li>
+    <li>
+      <button class="all-category__button" type="button" name="Business Books">
+        Business Books
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Graphic Books and Manga"
+      >
+        Graphic Books and Manga
+      </button>
+    </li>
+    <li>
+      <button
+        class="all-category__button"
+        type="button"
+        name="Young Adult Paperback Monthly"
+      >
+        Young Adult Paperback Monthly
+      </button>
+    </li>
+  </ul>
+</div>
+
+    <section id="sliderOne" class="splide" aria-label="Splide Basic HTML Example">
+  <div class="main-fonds">
+    <div class="support-block">
+      <h2 class="support-text">Support Ukraine</h2>
+      <img
+        src="/brain-waves-js-proj/assets/group_2-d0555d30.svg"
+        alt="trident"
+        width="20"
+        height="32"
+        class="support-img"
+      />
+    </div>
+    <div class="splide__track">
+      <ul class="splide__list"></ul>
+    </div>
+    <div class="splide__arrows">
+      <button class="splide__arrow splide__arrow--prev">
+        Prev
+      </button>
+      <button class="splide__arrow splide__arrow--next">
+        <svg id="rotate-svg" class="icon icon-slider">
+          <symbol id="icon-slider" viewBox="0 0 32 32">
+            <path fill="#fff" style="fill: var(--color1, #fff)" d="M16 32c-8.837 0-16-7.163-16-16s7.163-16 16-16c8.837 0 16 7.163 16 16s-7.163 16-16 16z"></path>
+            <path fill="#4f2ee8" style="fill: var(--color2, #4f2ee8)" d="M15.452 17.081c0.072 0.072 0.157 0.13 0.251 0.169s0.195 0.059 0.297 0.059 0.203-0.020 0.297-0.059c0.094-0.039 0.179-0.097 0.251-0.169l3.535-3.543c0.072-0.072 0.157-0.13 0.251-0.169s0.195-0.059 0.297-0.059c0.102 0 0.203 0.020 0.297 0.059s0.179 0.097 0.251 0.169c0.144 0.145 0.224 0.34 0.224 0.544s-0.081 0.4-0.224 0.544l-3.543 3.543c-0.434 0.434-1.023 0.677-1.636 0.677s-1.202-0.244-1.637-0.677l-3.543-3.543c-0.143-0.144-0.223-0.338-0.224-0.54-0.001-0.102 0.019-0.202 0.057-0.296s0.095-0.18 0.167-0.252c0.072-0.072 0.157-0.13 0.251-0.169s0.195-0.059 0.297-0.059c0.102 0 0.203 0.020 0.297 0.059s0.179 0.097 0.251 0.169l3.535 3.543z"></path>
+            </symbol><use xlink:href="#icon-slider"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+    <main>
+      <div class="shopping-div">
+        <div class="shopping-div-svg">
+          <div class="shop-icons">
+            <p class="shopping">Shopping<span class="list"> List</span></p>
+          </div>
+        </div>
+        <ul class="js-list shopping-list-section"></ul>
+        <div class="is-hidden-shop-list cart">
+          <p class="empty-cart-notification">
+            This page is empty, add some books and proceed to order.
+          </p>
+          <img
+            src="/brain-waves-js-proj/assets/img_96061-04422700.png"
+            class="empty-cart-img"
+            alt="book"
+            width="265"
+            height="168"
+          />
+        </div>
+      </div>
+    </div>
     </main>
 
     
