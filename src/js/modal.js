@@ -7,7 +7,7 @@ const shoppingButtonModal = document.querySelector('.shopping-button-modal');
 const addBook = document.querySelector('.add-book-modal');
 const removeBook = document.querySelector('.remove-book-modal');
 const textAfterShop = document.querySelector('.text-after-buy');
-const bookListLisener = document.querySelector('.js-books-field-wrapper');
+const bookListLisener = document.querySelector('body');
 const modalWrapper = document.querySelector('.modal-markup');
 
 closeModalButton.addEventListener('click', closeModal);
@@ -183,6 +183,19 @@ async function getDataBook(id) {
 // Створення розмітки для модального вікна
 
 function creatMarkupModal({ book_image, title, author, amazon_product_url }) {
+
+  const amazomImg = {
+    title: 'AmazonMarketplace',
+    img: new URL('../images/mask_group_corrected.png', import.meta.url).href,
+    img2x: new URL('../images/mask_group_corrected@2x.png', import.meta.url).href,
+  };
+
+  const bookInfoImg = {
+    title: 'Book',
+    img: new URL('../images/image_1.png', import.meta.url).href,
+    img2x: new URL('../images/image_1@2x.png', import.meta.url).href,
+  };
+
   return `<div class="book-inform-modal-wraper">
              <div class="modal-img-wrapper">
                  <img class="modal-img" src="${book_image}" alt="book-image" />
@@ -201,18 +214,16 @@ function creatMarkupModal({ book_image, title, author, amazon_product_url }) {
                       href="${amazon_product_url}"
                       target="blank"
                       ><img
-                        alt="marketplace"
+                        alt="${amazomImg.title}"
                         class="marketplace-img-modal"
                         srcset="
-                      ../images/mask_group_corrected.png,
-                      ../images/mask_group_corrected@2x.png 2x
+                        ${amazomImg.img}, ${amazomImg.img2x} 2x
                       "/>
                       </a>
                     
-                    <img  alt="book" class="book-img-modal" 
+                    <img  ${bookInfoImg.title} class="book-img-modal" 
                     srcset="
-                    ../images/image_1.png,
-                    ../images/image_1@2x.png 2x
+                    ${bookInfoImg.img}, ${bookInfoImg.img2x} 2x
                     "/>
                   
                   </div>
