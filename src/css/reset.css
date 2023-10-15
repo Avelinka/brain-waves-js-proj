@@ -11,12 +11,14 @@
   --black-1: #202024;
   --black: #111;
   --bg-color: #f6f6f6;
+  --second-text-color: rgba(17, 17, 17, 0.6);
 }
 
 .theme-dark {
   --black: #fff;
   --white: #111;
   --bg-color: #202024;
+  --second-text-color: #ffffff*60%;
 }
 
 body {
