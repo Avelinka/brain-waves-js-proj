@@ -3,8 +3,7 @@
   background-color: #4f2ee8;
   right: 20px;
   bottom: 0;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -16,10 +15,9 @@
 .btn-up::before {
   content: "";
   width: 54px;
-  height: 50px;
+  height: 54px;
   background: transparent no-repeat center center;
   background-size: 100% 100%;
-  background-image: url(/images/spite.svg#id=icon-btn-up width='64' height='64' viewBox='0 0 32 32'");
 }
 
 .btn-up_hide {
@@ -29,5 +27,10 @@
 @media (hover: hover) and (pointer: fine) {
   .btn-up:hover {
     background-color: #4f2ee8 30%; 
+  }
+}
+@media (focus: focus) and (pointer: fine) {
+  .btn-up:focus {
+    background-color: #4f2ee8 30%;
   }
 }
