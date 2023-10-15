@@ -16,31 +16,31 @@
   </head>
   <body>
     <load ="./partials/header.html" />
-    <load ="./partials/all-category.html" />
-    <load ="./partials/fonds-ukraine.html" />
-
+    
     <main>
+      <section>
       <div class="shopping-div">
-        <div class="shopping-div-svg">
-          <div class="shop-icons">
-            <p class="shopping">Shopping<span class="list"> List</span></p>
-          </div>
+        <div class="shopping-div-support hidden-support-list">
+          <load ="./partials/fonds-ukraine.html" />
         </div>
-        <ul class="js-list shopping-list-section"></ul>
-        <div class="is-hidden-shop-list cart">
-          <p class="empty-cart-notification">
+        <div class="container-shops-list">
+          <h1 class="shopping">Shopping<span class="span-list"> List</span></h1>
+          <ul class="js-list shopping-list-section"></ul>
+          <div class="hidden-shop-list cart">
+           <p class="empty-cart-notification">
             This page is empty, add some books and proceed to order.
-          </p>
-          <img
+           </p>
+           <img
             src="./images/img_96061.png"
             class="empty-cart-img"
             alt="book"
             width="265"
             height="168"
-          />
+           />
+          </div>
         </div>
       </div>
-    </div>
+  </section>
     </main>
 
     <script type="module" src="./js/shopping-list.js"></script>

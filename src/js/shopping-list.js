@@ -1,4 +1,6 @@
-// треба ще додати імпорти з інших файлів.
+import './fonds-ukraine';
+import './all-categories-books-field';
+import './fetch-requests';
 
 const goToCartButton = document.querySelector(".js-go-to-cart");
 const refJsLIst = document.querySelector(".js-list");
@@ -39,9 +41,9 @@ function createBookLinks(buy_links) {
 }
 console.log(createMarkup(products));
 if (localStorage.getItem('shoppingList') === null) {
-    const hiddenElement = document.querySelector('.is-hidden-shop-list');
+    const hiddenElement = document.querySelector('.hidden-shop-list');
     const hidden = document.querySelector('.cart');
-    hiddenElement.classList.remove('.is-hidden-shop-list');
+    hiddenElement.classList.remove('is-hidden');
     hidden.classList.add('cart');
 } 
 else {
@@ -61,9 +63,9 @@ function removeProduct(event) {
     updateLocalStorage();
 
      if(!document.querySelector(".shopping-list-item")){
-        const hiddenElement = document.querySelector('.is-hidden-shop-list');
+        const hiddenElement = document.querySelector('.hidden-shop-list');
         const hidden = document.querySelector('.cart');
-        hiddenElement.classList.remove('.is-hidden-shop-list');
+        hiddenElement.classList.remove('is-hidden');
         hidden.classList.add('cart');
      }
   }
@@ -81,7 +83,7 @@ function updateLocalStorage() {
 console.log(localStorage);
 if (productIds.length === 0) {
     const messageElement = document.querySelector('.message');
-    messageElement.classList.remove('.is-hidden-shop-list');
+    messageElement.classList.remove('is-hidden');
   }
 }
 
