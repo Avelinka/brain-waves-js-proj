@@ -6,8 +6,8 @@ const funds = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: 'images/1.png',
-    img2x: 'images/1@2x.png',
+    img: new URL('../images/1.png', import.meta.url).href,
+    img2x: new URL('../images/1@2x.png', import.meta.url).href,
   },
   {
     title: 'Project HOPE',
