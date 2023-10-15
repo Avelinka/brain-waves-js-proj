@@ -10,27 +10,32 @@ const fieldBooks = document.querySelector('.field-books');
 const sortFieldTitle = document.querySelector('.field-title');
 const booksList = document.querySelector('.books-list');
 const allBooksTitle = document.querySelector('.all-books-title');
+const categoryField = document.querySelector('.field-categories'); // дів для кожної категорії
+const booksField = document.querySelector('.books-field-wrapper');
 
 allList.addEventListener('click', sortForCategory);
 
 async function sortForCategory(event) {
   if (event.target.nodeName !== 'BUTTON') return;
   const categoryName = event.target.name;
+  console.log(categoryName);
 
   try {
-    
     if (categoryName === 'All categories') {
-      allBooksTitle.style.display = 'block';
-      sortFieldTitle.style.display = 'none';
       resetDedicatedCategory();
       event.target.classList.add('dedicated-category');
+      getAllBooksByCategory();
+      return;
     } else {
-      allBooksTitle.style.display = 'none';
-      sortFieldTitle.style.display = 'block';
+      booksField.hidden = true;
+      categoryField.hidden = false;
+      //   allBooksTitle.style.display = 'none';
+      // sortFieldTitle.style.display = 'block';
       const getCategoryName = await getBooksByCategory(categoryName);
-
+      console.log(getCategoryName);
+      //рпроблема
       const listMarkup = await createMarkup(getCategoryName, categoryName);
-
+      console.log(listMarkup);
       fieldBooks.innerHTML = listMarkup;
 
       resetDedicatedCategory();
@@ -47,12 +52,15 @@ function resetDedicatedCategory() {
 }
 
 async function createMarkup(array, categoryName) {
-  sortFieldTitle.innerHTML = `<h2 class="field-title">${categoryName}</h2>`;
+  const oneBook = markup(array);
 
+  return `<h2 class="field-title">${categoryName}</h2> ${oneBook}`;
+}
+
+function markup(array) {
   let markUp = array
     .map(({ author, title, book_image, _id }) => {
-      return;
-      `<li id="${_id}" class="books">
+      return `<li id="${_id}" class="books">
             <img loading="lazy" src="${book_image}" alt="${title}" />
             <h3>${title}</h3>
             <p>${author}</p>
@@ -60,5 +68,6 @@ async function createMarkup(array, categoryName) {
         </li>`;
     })
     .join('');
+  console.log(markUp);
   return markUp;
 }

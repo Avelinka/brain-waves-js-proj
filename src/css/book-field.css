@@ -22,11 +22,11 @@
     flex-direction: row;
     justify-content: space-between;
 
-    max-width: 704px;
+    width: 704px;
     flex-wrap: wrap;
   }
   @media screen and (min-width: 1440px) {
-    max-width: 996px;
+    width: 996px;
   }
 }
 
@@ -36,16 +36,18 @@
   margin-bottom: 40px;
 
   img {
-    max-width: 335px;
+    width: 335px;
     border-radius: 8px;
 
     margin-bottom: 14px;
 
     @media screen and (min-width: 768px) {
       max-width: 218px;
+      height: 316px;
     }
     @media screen and (min-width: 1440px) {
-      max-width: 180px;
+      width: 180px;
+      height:256px;
     }
   }
 

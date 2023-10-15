@@ -2,7 +2,7 @@
 import { createCategoryMarkap } from "./all-categories-books-field"
 import { getTopBooks } from "./fetch-requests"
 
-const booksField = document.querySelector('.js-books-field-wrapper')
+export const booksField = document.querySelector('.js-books-field-wrapper')
 const categoryField = document.querySelector('#field-categories')
 
 home()
@@ -23,6 +23,6 @@ export async function home() {
 
 export function getAllBooksByCategory(evt) {
     console.log('test. Далі має зʼявитись div Павла')
-    booksField.hidden = true
-    categoryField.hidden = false
+    booksField.hidden = false
+    categoryField.hidden = true
 }
