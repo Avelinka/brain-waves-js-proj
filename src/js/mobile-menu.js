@@ -12,9 +12,11 @@
         isMenuOpen = !isMenuOpen;
 
         if (isMenuOpen) {
-        burgerBtn.setAttribute('href', '/images/sprite.svg#icon-x-close');
+            burgerBtn.setAttribute('href', new URL('../images/sprite.svg#icon-x-close', window.location).href);
+            document.body.classList.toggle('no-scroll');
         } else {
-        burgerBtn.setAttribute('href', '/images/sprite.svg#icon-gamburger');
+            burgerBtn.setAttribute('href', new URL('../images/sprite.svg#icon-gamburger', window.location).href);
+            document.body.classList.toggle('no-scroll');
         }
     
         openMenuBtn.setAttribute('aria-expanded', isMenuOpen);
