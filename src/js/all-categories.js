@@ -8,8 +8,8 @@ import { getAllBooksByCategory } from './home';
 const allList = document.querySelector('.all-category-list'); //список для категорій
 const categoryField = document.querySelector('.field-categories'); // лів Павла
 const booksField = document.querySelector('.books-field-wrapper'); // мій дів
-buildCategortMeny()
-async function buildCategortMeny() {
+buildCategoryMeny()
+async function buildCategoryMeny() {
   const namesArr = await getBookCategories();
   const markup = menuMarkup(namesArr)
   allList.insertAdjacentHTML('beforeend', markup)
