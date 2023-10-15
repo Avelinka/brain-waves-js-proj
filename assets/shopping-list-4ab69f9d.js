@@ -1,4 +1,4 @@
-import{g as d}from"./swither-theme-bb6201ba.js";document.querySelector(".js-go-to-cart");document.querySelector(".js-list");const h=document.querySelector(".js-list"),i="shoping-list",a=JSON.parse(localStorage.getItem(i))||[];function c(e){return e.map(({author:t,book_image:n,buy_links:s,title:o})=>`
+import{g as d}from"./swither-theme-5845ad73.js";document.querySelector(".js-go-to-cart");document.querySelector(".js-list");const h=document.querySelector(".js-list"),i="shoping-list",a=JSON.parse(localStorage.getItem(i))||[];function c(e){return e.map(({author:t,book_image:n,buy_links:s,title:o})=>`
     <li data-id="${o}" class="js-product shopping-list-item">
         <img src="${n}" alt="${o}" width="116" height="165" class="shop-img"/> 
         <div class="shop-item-div">
