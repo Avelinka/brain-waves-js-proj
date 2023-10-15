@@ -1,3 +1,5 @@
+@import url('./reset.css');
+
 .shopping {
   font-family: 'DM Sans', sans-serif;
   font-size: 32px;
@@ -11,11 +13,15 @@
 .shopping-div {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin-bottom: 40px;
 }
 
-.is-hidden-shop-list {
+.hidden-support-list {
+  display: none;
+}
+
+.hidden-shop-list {
   display: none;
 }
 
@@ -40,6 +46,10 @@
 .home-link-menu,
 .home-link {
   background: none;
+}
+
+.span-list {
+  color: #4f2ee8;
 }
 
 .empty-cart-notification {
@@ -68,9 +78,8 @@
   border: 2px solid rgba(79, 46, 232, 0.4);
 }
 
-.shopping-div-svg {
-  margin-bottom: 40px;
-  justify-content: flex-start;
+.container-shops-list {
+  padding-left: 20px;
 }
 
 .shopping-list-section {
@@ -149,6 +158,9 @@
         padding: 0;
     } */
 
+  .container-shops-list {
+    padding-left: 32px;
+  }
   .support-shopping-section {
     justify-content: flex-start;
     width: 704px;
@@ -215,10 +227,27 @@
         padding: 0;
     } */
 
+  .container-shops-list {
+    padding-left: 40px;
+  }
+
+  .hidden-support-list {
+    display: flex;
+  }
+
   .hidden {
     display: flex;
     width: 356px;
     height: 474px;
+  }
+
+  .shopping-div {
+    display: flex;
+    margin-top: 40px;
+    width: 996px;
+  }
+  .shopping-div-support {
+    padding-left: 24px;
   }
 
   .shopping-div {
