@@ -3,13 +3,13 @@ import { getInformationBtId } from './fetch-requests';
 const goToCartButton = document.querySelector('.js-go-to-cart');
 const refJsLIst = document.querySelector('.js-list');
 const container = document.querySelector('.js-list');
-const storageKey = 'shoppingList';
+const storageKey = 'shoping-list';
 const products = JSON.parse(localStorage.getItem(storageKey)) || [];
 
 function createMarkup(arr) {
   return arr
     .map(
-      ({ author, book_image, buy_links, description, title }) => `
+      ({ author, book_image, buy_links, title }) => `
     <li data-id="${title}" class="js-product shopping-list-item">
         <img src="${book_image}" alt="${title}" width="116" height="165" class="shop-img"/> 
         <div class="shop-item-div">
@@ -21,7 +21,8 @@ function createMarkup(arr) {
 </svg>
                 </button>
             </div>
-            <p class="shopping-list-text">${limitWords(description, 18)}</p>
+            <p class="shopping-list-text">This book provides the reader with deep insights into the lives and
+            experiences of its characters, revealing the complexities of human nature and creating a captivating narrative that leaves a lasting impression on the hearts of readers.</p>
             <div class="author-icons">
                 <p class="shopping-list-author">${author}</p>
                 <div class="book-links">
@@ -43,7 +44,7 @@ function createBookLinks(buy_links) {
     <a href="${buy_links[2].url}" target="_blank"> <img src="/src/images/Icon1.png" alt="Link Icon" class="link-icon book-shop" width="16" height="16"></a>`;
 }
 console.log(createMarkup(products));
-if (localStorage.getItem('shoppingList') === null) {
+if (localStorage.getItem('shoping-list') === null) {
   const hiddenElement = document.querySelector('.hidden-shop-list');
   const hidden = document.querySelector('.cart');
   hiddenElement.classList.remove('is-hidden');
@@ -55,13 +56,33 @@ if (localStorage.getItem('shoppingList') === null) {
 
 let removeButtons = document.querySelectorAll('.js-remove');
 
+// function removeProduct(event) {
+//   let liElement = event.target.closest('.js-product');
+//   if (liElement) {
+//     liElement.remove();
+//     localStorage.removeItem('shoping-list');
+//     console.log('Дані видалені із локального сховища.');
+//     updateLocalStorage();
+
+//     if (!document.querySelector('.shopping-list-item')) {
+//       const hiddenElement = document.querySelector('.hidden-shop-list');
+//       const hidden = document.querySelector('.cart');
+//       hiddenElement.classList.remove('is-hidden');
+//       hidden.classList.add('cart');
+//     }
+//   }
+// }
+
 function removeProduct(event) {
   let liElement = event.target.closest('.js-product');
+  let bookId = liElement.getAttribute('.data-id');
+ 
   if (liElement) {
-    liElement.remove();
-    localStorage.removeItem('shoppingList');
-    console.log('Дані видалені із локального сховища.');
-    updateLocalStorage();
+     liElement.remove();
+    const shopingListArr = JSON.parse(localStorage.getItem(storageKey));
+  const indexBookToDelete = shopingListArr.findIndex(obj => obj._id ===  bookId);
+  shopingListArr.splice(indexBookToDelete, 1);
+  localStorage.setItem(storageKey, JSON.stringify(shopingListArr));
 
     if (!document.querySelector('.shopping-list-item')) {
       const hiddenElement = document.querySelector('.hidden-shop-list');
