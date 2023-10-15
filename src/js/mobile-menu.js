@@ -3,16 +3,35 @@
     const openMenuBtn = document.querySelector('.js-open-menu');
     const closeMenuBtn1 = document.querySelector('.js-close-menu-1');
     const closeMenuBtn2 = document.querySelector('.js-close-menu-2');
-    //const closeMenuBtnIcon = document.querySelector('.js-close-menu-icon'); //  кнопка з хрестиком
+    const burgerBtn = document.querySelector('#js-icon');
+//const closeMenuBtnIcon = document.querySelector('.js-close-menu-icon'); //  кнопка з хрестиком
 
+    let isMenuOpen = false;
+    
     const toggleMenu = () => {
-        const isMenuOpen =
-        openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
-        openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
-        mobileMenu.classList.toggle('is-open');
+        isMenuOpen = !isMenuOpen;
+
+        if (isMenuOpen) {
+        burgerBtn.setAttribute('href', '/images/sprite.svg#icon-x-close');
+        } else {
+        burgerBtn.setAttribute('href', '/images/sprite.svg#icon-gamburger');
+        }
+    
+        openMenuBtn.setAttribute('aria-expanded', isMenuOpen);
+        mobileMenu.classList.toggle('is-open', isMenuOpen);
+
+        if (isMenuOpen) {
+            document.addEventListener('keydown', handleEscKeyPress);
+        } else {
+            document.removeEventListener('keydown', handleEscKeyPress)
+        }
     };
 
+
+
     const closeModal = () => {
+        isMenuOpen = false;
+        burgerBtn.setAttribute('href', '/images/sprite.svg#icon-gamburger');
         mobileMenu.classList.remove('is-open');
         openMenuBtn.setAttribute('aria-expanded', false);
         document.removeEventListener('click', closeModal);
