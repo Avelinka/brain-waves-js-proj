@@ -1,4 +1,4 @@
-import"./styles-1fba8d85.js";document.querySelector(".js-go-to-cart");document.querySelector(".js-list");const d=document.querySelector(".js-list"),n="shoppingList",c=JSON.parse(localStorage.getItem(n))||[];function r(e){return e.map(({author:t,book_image:s,buy_links:i,description:a,title:o})=>`
+import"./styles-9ed4002a.js";document.querySelector(".js-go-to-cart");document.querySelector(".js-list");const d=document.querySelector(".js-list"),n="shoppingList",c=JSON.parse(localStorage.getItem(n))||[];function r(e){return e.map(({author:t,book_image:s,buy_links:i,description:a,title:o})=>`
     <li data-id="${o}" class="js-product shopping-list-item">
         <img src="${s}" alt="${o}" width="116" height="165" class="shop-img"/> 
         <div class="shop-item-div">
