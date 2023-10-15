@@ -7,3 +7,4 @@ import './js/modal';
 import './js/all-categories';
 import './js/mobile-menu';
 import './js/button';
+import './js/swither-theme';

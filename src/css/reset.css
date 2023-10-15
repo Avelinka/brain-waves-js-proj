@@ -4,10 +4,17 @@
   --violet: #4f2ee8;
   --black-1: #202024;
   --black: #111;
+  --bg-color: #f6f6f6;
+}
+
+.theme-dark {
+  --black: #fff;
+  --white: #111;
+  --bg-color: #202024;
 }
 
 body {
-  background-color: #f6f6f6;
+  background-color: var(--bg-color);
   font-family: 'DM Sans', sans-serif;
   color: var(--black);
 }
