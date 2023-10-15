@@ -33,9 +33,9 @@ Notiflix needs to be appended to the "<`+s+'>" element, but you called it before
         ${n.list_name}
       </button>
     </li>`).join("")}Ei.addEventListener("click",ol);async function ol(t){if(t.target.nodeName!=="BUTTON")return;const e=t.target.name;try{if(e==="All categories"){no(),t.target.classList.add("dedicated-category"),oa.hidden=!1,ti.hidden=!0;return}else aa(e),no(),t.target.classList.add("dedicated-category")}catch{ke.Notify.failure("Sorry, there are no books matching your search query. Please try again.");return}}async function aa(t){oa.hidden=!0,ti.hidden=!1;const e=await _s(t),n=await al(e,t);ti.innerHTML=n}function no(){Ei.querySelectorAll(".dedicated-category").forEach(e=>e.classList.remove("dedicated-category"))}async function al(t,e){const n=rl(t);return`<h2 class="book-field-name">
-  <span class="first-word">${e.split(" ")[0]}</span>
-  <span class="second-word">${e.split(" ")[1]}</span>
-</h2> <ul class="field-books book-list"> ${n}  </ul>`}function rl(t){return t.map(({author:n,title:i,book_image:o,_id:a})=>`<li id="${a}" class="books book-card">
+  <span class="first-word">${e.split(" ").slice(0,-1).join(" ")}</span>
+  <span class="last-word">${e.split(" ").pop()}</span>
+</h2><ul class="field-books book-list"> ${n}  </ul>`}function rl(t){return t.map(({author:n,title:i,book_image:o,_id:a})=>`<li id="${a}" class="books book-card">
             <div class="img-thumb">
             <img loading="lazy" class="book-img" src="${o}" alt="${i}" />
             <div class="quick-view" data-id-book="${a}"><p>quick view</p></div>
