@@ -208,15 +208,15 @@ function creatMarkupModal({ book_image, title, author, amazon_product_url }) {
                         alt="marketplace"
                         class="marketplace-img-modal"
                         srcset="
-                      ./images/mask_group_corrected.png,
-                      ./images/mask_group_corrected@2x.png 2x
+                      ../images/mask_group_corrected.png,
+                      ../images/mask_group_corrected@2x.png 2x
                       "/>
                       </a>
                     
                     <img  alt="book" class="book-img-modal" 
                     srcset="
-                    ./images/image_1.png,
-                    ./images/image_1@2x.png 2x
+                    ../images/image_1.png,
+                    ../images/image_1@2x.png 2x
                     "/>
                   
                   </div>
