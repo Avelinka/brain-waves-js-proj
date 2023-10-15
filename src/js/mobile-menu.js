@@ -12,10 +12,10 @@
         isMenuOpen = !isMenuOpen;
 
         if (isMenuOpen) {
-            burgerBtn.setAttribute('href', new URL('/src/images/sprite.svg#icon-x-close', window.location).href);
+            burgerBtn.setAttribute('href', new URL('/images/sprite.svg#icon-x-close', window.location).href);
             document.body.classList.toggle('no-scroll');
         } else {
-            burgerBtn.setAttribute('href', new URL('/src/images/sprite.svg#icon-gamburger', window.location).href);
+            burgerBtn.setAttribute('href', new URL('/images/sprite.svg#icon-gamburger', window.location).href);
             document.body.classList.toggle('no-scroll');
         }
     
@@ -34,7 +34,7 @@
     const closeModal = () => {
         isMenuOpen = false;
         document.body.classList.toggle('no-scroll');
-        burgerBtn.setAttribute('href', '/images/sprite.svg#icon-gamburger');
+        burgerBtn.setAttribute('href', new URL('/images/sprite.svg#icon-gamburger', window.location).href);
         mobileMenu.classList.remove('is-open');
         openMenuBtn.setAttribute('aria-expanded', false);
         document.removeEventListener('click', closeModal);
