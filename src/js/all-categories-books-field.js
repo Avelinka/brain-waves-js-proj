@@ -5,7 +5,6 @@ import Notiflix from 'notiflix';
 export async function createCategoryMarkap(arr) {  
     const markup = arr.map((categoryObj) => {
         if (categoryObj.books.length === 0) {
-            //повідомлення треба придумати логічне
             Notiflix.Notify.failure('Sorry, there are no books matching your search query. Please try again.')
         return
         }
