@@ -2,15 +2,12 @@ import Splide from '@splidejs/splide';
 // Default theme
 import '@splidejs/splide/css';
 
-
-
-
 const funds = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: 'images/1.png',
-    img2x: 'images/1@2x.png',
+    img: '~/images/1.png',
+    img2x: '~/images/1@2x.png',
   },
   {
     title: 'Project HOPE',
@@ -72,7 +69,6 @@ nextButton.addEventListener('click', () => {
   isFlipped = !isFlipped;
 
   if (isFlipped) {
-
     rotateSvg.innerHTML = `
       <svg id="icon-slider-3" viewBox="0 0 32 32">
         <path fill="#fff" style="fill: var(--color1, #fff)" d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16z"></path>
@@ -80,12 +76,9 @@ nextButton.addEventListener('click', () => {
       </svg>
     `;
   } else {
-
     rotateSvg.innerHTML = originalSvg;
   }
 });
-
-
 
 funds.sort((a, b) =>
   a.title === 'UNITED24' ? 1 : b.title === 'UNITED24' ? -1 : 0
@@ -107,7 +100,6 @@ funds.forEach(fund => {
     const fundImage = document.createElement('img');
     fundImage.src = fund.img;
     if (window.devicePixelRatio >= 2) {
-
       fundImage.srcset = `${fund.img2x} 2x, ${fund.img} 1x`;
     }
     fundLink.textContent = '';
