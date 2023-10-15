@@ -1,13 +1,19 @@
 .all-category {
   height: 228px;
 
-  max-width: 335px;
+  width: 335px;
   overflow: auto;
-  @media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 768px) {
+  .all-category {
     height: 472px;
   }
-  @media screen and (min-width: 1440px) {
-    max-width: 356px;
+}
+
+@media screen and (min-width: 768px) {
+  .all-category {
+    width: 356px;
   }
 }
 
