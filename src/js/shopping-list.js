@@ -1,6 +1,4 @@
-import './fonds-ukraine';
-import './all-categories-books-field';
-import './fetch-requests';
+import { getInformationBtId } from "./all-categories-books-field";
 
 const goToCartButton = document.querySelector(".js-go-to-cart");
 const refJsLIst = document.querySelector(".js-list");
@@ -32,6 +30,8 @@ function createMarkup(arr) {
     </li>
 `).join("");
 }
+
+getInformationBtId();
 
 function createBookLinks(buy_links) {
     return `<a href="${buy_links[0].url}" target="_blank"> <img src="/src/images/mask_group_corrected.png" alt="Link Icon" class="link-icon amazon" width="32" height="11"></a>
@@ -95,6 +95,7 @@ window.addEventListener("beforeunload", function () {
 removeButtons.forEach(function (button) {
   button.addEventListener("click", removeProduct);
 });
+
 function limitWords(text, limit) {
     const words = text.split(" ");
     if (words.length <= limit) {

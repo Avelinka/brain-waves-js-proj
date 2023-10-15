@@ -21,10 +21,6 @@
   display: none;
 }
 
-.hidden-shop-list {
-  display: none;
-}
-
 .top-item-div {
   display: flex;
   align-items: center;
@@ -143,20 +139,12 @@
   padding: 0 20px;
 }
 
-/* .container {
-        width: 375px;
-        margin: 0 auto;
-    } */
 
 .hidden {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  /* .container {
-        width: 768px;
-        padding: 0;
-    } */
 
   .container-shops-list {
     padding-left: 32px;
