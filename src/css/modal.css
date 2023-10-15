@@ -11,7 +11,6 @@
   background-color: rgba(17, 17, 17, 0.4);
 
   overflow-y: auto;
-  
 
   transition: opacity 0.3s;
 }
@@ -104,9 +103,11 @@ body.modal-open {
   cursor: pointer;
 }
 
-.marketplace-img-modal:hover, .marketplace-img-modal:focus,
-.book-img-modal:hover,  .book-img-modal:focus{
-  filter: drop-shadow(0px 3px 3px rgba(0,0,0,.35));
+.marketplace-img-modal:hover,
+.marketplace-img-modal:focus,
+.book-img-modal:hover,
+.book-img-modal:focus {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
 .shopping-button-modal {
@@ -130,7 +131,8 @@ body.modal-open {
   cursor: pointer;
 }
 
-.more-btn:hover, .more-btn:focus,
+.more-btn:hover,
+.more-btn:focus,
 .shopping-button-modal:hover {
   background-color: var(--violet);
   color: var(--white);
@@ -142,7 +144,7 @@ body.modal-open {
 }
 
 .text-after-buy {
-  color: rgba(17, 17, 17, 0.5);
+  color: var(--second-text-color);
   text-align: center;
   font-size: 10px;
   line-height: 1.2;
@@ -208,7 +210,6 @@ body.modal-open {
     /* замість 94px має бути 100, але так воно ламається
     ще думаю, як це виправити */
     padding: 20px 94px;
-
 
     margin: 40px auto 0;
 

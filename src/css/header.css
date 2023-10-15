@@ -6,8 +6,10 @@ button {
 .header-container {
   display: flex;
   height: 64px;
+  max-width: 767px;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--white);
   border: 1.5px solid var(--black);
   border-radius: 0 0 8px 8px;
 }
@@ -129,6 +131,7 @@ input:checked + .slider:before {
 @media screen and (min-width: 768px) {
   .header-container {
     height: 72px;
+    max-width: 1439px;
   }
 
   .header-logo {
@@ -154,6 +157,10 @@ input:checked + .slider:before {
     line-height: 1.28;
     letter-spacing: -0.56px;
     text-transform: uppercase;
+  }
+
+  .bag-icon {
+    stroke: var(--black);
   }
 
   .current-page {
