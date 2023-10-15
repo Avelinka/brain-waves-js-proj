@@ -161,10 +161,10 @@ function onStorageDelete() {
 
 function GetId(event) {
   const clickedElement = event.target;
-  const closestLi = clickedElement.closest('li');
+  const quickViewEl = clickedElement.closest('.quick-view');
   
-  if (closestLi) {
-    bookID = closestLi.getAttribute('data-id');
+  if (quickViewEl) {
+    bookID = quickViewEl.getAttribute('data-id-book');
   } else {
     return;
   }
