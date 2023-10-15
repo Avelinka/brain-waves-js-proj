@@ -144,7 +144,7 @@ body.modal-open {
 }
 
 .text-after-buy {
-  color: var(--second-text-color);
+  color: var(--grey);
   text-align: center;
   font-size: 10px;
   line-height: 1.2;
@@ -227,4 +227,12 @@ body.modal-open {
     max-width: 324px;
     margin: 8px auto 0;
   }
+}
+
+.button-close {
+  stroke: #111;
+}
+
+.theme-dark .button-close {
+  stroke: #fff;
 }

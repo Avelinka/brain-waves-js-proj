@@ -12,6 +12,7 @@
   --black: #111;
   --bg-color: #f6f6f6;
   --second-text-color: rgba(17, 17, 17, 0.6);
+  --grey: rgba(17, 17, 17, 0.5);
 }
 
 .theme-dark {
@@ -19,6 +20,7 @@
   --white: #111;
   --bg-color: #202024;
   --second-text-color: #ffffff * 60%;
+  --grey: rgba(255, 255, 255, 0.5);
 }
 
 body {
