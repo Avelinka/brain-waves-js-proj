@@ -15,9 +15,9 @@ function addThemeDarkClass() {
     try {
         if (localStorage.getItem('theme') === 'theme-dark') {
             document.querySelector('html').classList.add('theme-dark');
-            svgBackColor.classList.backgroundColor = 'black';
-            svgBackColor.classList.add("stroke", 'white')
+            svgBackColor.classList.add("gamburger-icon-dark")
         } else {
+            svgBackColor.classList.remove("gamburger-icon-dark");
             document.querySelector('html').classList.remove('theme-dark');
         }
     } catch (err) { }
