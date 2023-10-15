@@ -161,6 +161,7 @@ input:checked + .slider:before {
     padding: 8px 16px;
     border-radius: 36px;
     background: var(--yellow);
+    color: #111;
   }
 
   .shopping-bag-icon {
