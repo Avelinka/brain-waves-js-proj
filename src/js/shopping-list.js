@@ -1,13 +1,15 @@
-import { getInformationBtId } from "./all-categories-books-field";
+import { getInformationById } from './all-categories-books-field';
 
-const goToCartButton = document.querySelector(".js-go-to-cart");
-const refJsLIst = document.querySelector(".js-list");
-const container = document.querySelector(".js-list");
+const goToCartButton = document.querySelector('.js-go-to-cart');
+const refJsLIst = document.querySelector('.js-list');
+const container = document.querySelector('.js-list');
 const storageKey = 'shoppingList';
-const products = JSON.parse(localStorage.getItem(storageKey))||[];
+const products = JSON.parse(localStorage.getItem(storageKey)) || [];
 
 function createMarkup(arr) {
-    return arr.map(({ author, book_image, buy_links, description, title }) => `
+  return arr
+    .map(
+      ({ author, book_image, buy_links, description, title }) => `
     <li data-id="${title}" class="js-product shopping-list-item">
         <img src="${book_image}" alt="${title}" width="116" height="165" class="shop-img"/> 
         <div class="shop-item-div">
@@ -28,46 +30,45 @@ function createMarkup(arr) {
             </div>
         </div>
     </li>
-`).join("");
+`
+    )
+    .join('');
 }
 
-getInformationBtId();
+getInformationById();
 
 function createBookLinks(buy_links) {
-    return `<a href="${buy_links[0].url}" target="_blank"> <img src="/src/images/mask_group_corrected.png" alt="Link Icon" class="link-icon amazon" width="32" height="11"></a>
+  return `<a href="${buy_links[0].url}" target="_blank"> <img src="/src/images/mask_group_corrected.png" alt="Link Icon" class="link-icon amazon" width="32" height="11"></a>
     <a href="${buy_links[1].url}" target="_blank"> <img src="/src/images/image_1.png" alt="Link Icon" class="link-icon apple-book" width="16" height="16"></a>
-    <a href="${buy_links[2].url}" target="_blank"> <img src="/src/images/Icon1.png" alt="Link Icon" class="link-icon book-shop" width="16" height="16"></a>`
-   
+    <a href="${buy_links[2].url}" target="_blank"> <img src="/src/images/Icon1.png" alt="Link Icon" class="link-icon book-shop" width="16" height="16"></a>`;
 }
 console.log(createMarkup(products));
 if (localStorage.getItem('shoppingList') === null) {
-    const hiddenElement = document.querySelector('.hidden-shop-list');
-    const hidden = document.querySelector('.cart');
-    hiddenElement.classList.remove('is-hidden');
-    hidden.classList.add('cart');
-} 
-else {
-    const markup = createMarkup(products);
-    container.insertAdjacentHTML('beforeend',markup);
+  const hiddenElement = document.querySelector('.hidden-shop-list');
+  const hidden = document.querySelector('.cart');
+  hiddenElement.classList.remove('is-hidden');
+  hidden.classList.add('cart');
+} else {
+  const markup = createMarkup(products);
+  container.insertAdjacentHTML('beforeend', markup);
 }
 
-
-let removeButtons = document.querySelectorAll(".js-remove");
+let removeButtons = document.querySelectorAll('.js-remove');
 
 function removeProduct(event) {
-  let liElement = event.target.closest(".js-product");
+  let liElement = event.target.closest('.js-product');
   if (liElement) {
     liElement.remove();
     localStorage.removeItem('shoppingList');
     console.log('Дані видалені із локального сховища.');
     updateLocalStorage();
 
-     if(!document.querySelector(".shopping-list-item")){
-        const hiddenElement = document.querySelector('.hidden-shop-list');
-        const hidden = document.querySelector('.cart');
-        hiddenElement.classList.remove('is-hidden');
-        hidden.classList.add('cart');
-     }
+    if (!document.querySelector('.shopping-list-item')) {
+      const hiddenElement = document.querySelector('.hidden-shop-list');
+      const hidden = document.querySelector('.cart');
+      hiddenElement.classList.remove('is-hidden');
+      hidden.classList.add('cart');
+    }
   }
 }
 
@@ -75,34 +76,31 @@ function updateLocalStorage() {
   let productIds = [];
 
   removeButtons.forEach(function (button) {
-    let id = button.getAttribute("data-id");
+    let id = button.getAttribute('data-id');
     productIds.push(id);
   });
 
-  localStorage.setItem("selectedProducts", JSON.stringify(productIds));
-console.log(localStorage);
-if (productIds.length === 0) {
+  localStorage.setItem('selectedProducts', JSON.stringify(productIds));
+  console.log(localStorage);
+  if (productIds.length === 0) {
     const messageElement = document.querySelector('.message');
     messageElement.classList.remove('is-hidden');
   }
 }
 
-window.addEventListener("beforeunload", function () {
-    localStorage.setItem(storageKey);
-}
-);
+window.addEventListener('beforeunload', function () {
+  localStorage.setItem(storageKey);
+});
 
 removeButtons.forEach(function (button) {
-  button.addEventListener("click", removeProduct);
+  button.addEventListener('click', removeProduct);
 });
 
 function limitWords(text, limit) {
-    const words = text.split(" ");
-    if (words.length <= limit) {
-        return text;
-    } else {
-        return words.slice(0, limit).join(" ") + " ...";
-    }
+  const words = text.split(' ');
+  if (words.length <= limit) {
+    return text;
+  } else {
+    return words.slice(0, limit).join(' ') + ' ...';
+  }
 }
-
-
