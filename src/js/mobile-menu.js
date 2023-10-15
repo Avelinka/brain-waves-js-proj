@@ -14,13 +14,13 @@
     if (isMenuOpen) {
       burgerBtn.setAttribute(
         'href',
-        new URL('./images/sprite.svg#icon-x-close', import.meta.url).href
+        new URL('/images/sprite.svg#icon-x-close', import.meta.url).href
       );
       document.body.classList.toggle('no-scroll');
     } else {
       burgerBtn.setAttribute(
         'href',
-        new URL('./images/sprite.svg#icon-gamburger', import.meta.url).href
+        new URL('/images/sprite.svg#icon-gamburger', import.meta.url).href
       );
       document.body.classList.toggle('no-scroll');
     }
@@ -40,7 +40,7 @@
     document.body.classList.toggle('no-scroll');
     burgerBtn.setAttribute(
       'href',
-      new URL('./images/sprite.svg#icon-gamburger', import.meta.url).href
+      new URL('/images/sprite.svg#icon-gamburger', import.meta.url).href
     );
     mobileMenu.classList.remove('is-open');
     openMenuBtn.setAttribute('aria-expanded', false);
