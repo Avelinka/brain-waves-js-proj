@@ -26,4 +26,8 @@ export async function home() {
 export async function getAllBooksByCategory(evt) {
     const getCategoryName = evt.currentTarget.dataset.category
     showAllBooksByCategory(getCategoryName)
+    const selectedCategory = document.querySelector(`button[name="${getCategoryName}"]`)
+    selectedCategory.classList.add('dedicated-category')
+    const allCategortBtn = document.querySelector('button[name="All categories"]')
+    allCategortBtn.classList.remove('dedicated-category')
 }
