@@ -14,13 +14,13 @@
     if (isMenuOpen) {
       burgerBtn.setAttribute(
         'href',
-        new URL('/images/sprite.svg#icon-x-close', window.location).href
+        new URL('./images/sprite.svg#icon-x-close', window.location).href
       );
       document.body.classList.toggle('no-scroll');
     } else {
       burgerBtn.setAttribute(
         'href',
-        new URL('/images/sprite.svg#icon-gamburger', window.location).href
+        new URL('./images/sprite.svg#icon-gamburger', window.location).href
       );
       document.body.classList.toggle('no-scroll');
     }
