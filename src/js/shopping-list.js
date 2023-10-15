@@ -1,4 +1,4 @@
-import { getInformationById } from './fetch-requests';
+// import { getInformationById } from './fetch-requests';
 
 const goToCartButton = document.querySelector('.js-go-to-cart');
 const refJsLIst = document.querySelector('.js-list');
