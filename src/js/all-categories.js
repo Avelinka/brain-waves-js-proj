@@ -1,17 +1,36 @@
 import Notiflix from 'notiflix';
 import { createCategoryMarkap } from './all-categories-books-field';
 import { createBookMarkup } from './all-categories-books-field';
-import { getBooksByCategory } from './fetch-requests';
+import { getBooksByCategory, getBookCategories} from './fetch-requests';
 import { home } from './home';
 import { getAllBooksByCategory } from './home';
 
-const allList = document.querySelector('.all-category__list');
-const fieldBooks = document.querySelector('.field-books');
-const sortFieldTitle = document.querySelector('.field-title');
-const booksList = document.querySelector('.books-list');
-const allBooksTitle = document.querySelector('.all-books-title');
+const allList = document.querySelector('.all-category-list'); //список для категорій
 const categoryField = document.querySelector('.field-categories'); // лів Павла
 const booksField = document.querySelector('.books-field-wrapper'); // мій дів
+buildCategoryMeny()
+async function buildCategoryMeny() {
+  const namesArr = await getBookCategories();
+  const markup = menuMarkup(namesArr)
+  allList.insertAdjacentHTML('beforeend', markup)
+}
+
+//розмітка меню категорій
+function menuMarkup(arr) {
+  const markup = arr.map((name) => {
+    return ` <li>
+      <button
+        class="all-category-button"
+        type="button"
+        name="${name.list_name}">
+        ${name.list_name}
+      </button>
+    </li>`
+  }
+  ).join('')
+  return markup
+}
+
 
 allList.addEventListener('click', sortForCategory);
 
