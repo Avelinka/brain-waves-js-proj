@@ -8,42 +8,40 @@
 
   let isMenuOpen = false;
 
-  if (isMenuOpen) {
-    burgerBtn.setAttribute(
-      'href',
-      new URL('/images/sprite.svg#icon-x-close', window.location).href
-    );
-    document.body.classList.toggle('no-scroll');
-  } else {
-    burgerBtn.setAttribute(
-      'href',
-      new URL('/images/sprite.svg#icon-gamburger', window.location).href
-    );
-    document.body.classList.toggle('no-scroll');
-  }
+  const toggleMenu = () => {
+    isMenuOpen = !isMenuOpen;
 
-  openMenuBtn.setAttribute('aria-expanded', isMenuOpen);
-  mobileMenu.classList.toggle('is-open', isMenuOpen);
+    if (isMenuOpen) {
+      burgerBtn.setAttribute(
+        'href',
+        new URL('/images/sprite.svg#icon-x-close', window.location).href
+      );
+      document.body.classList.toggle('no-scroll');
+    } else {
+      burgerBtn.setAttribute(
+        'href',
+        new URL('/images/sprite.svg#icon-gamburger', window.location).href
+      );
+      document.body.classList.toggle('no-scroll');
+    }
 
-  if (isMenuOpen) {
-    document.addEventListener('keydown', handleEscKeyPress);
-  } else {
-    document.removeEventListener('keydown', handleEscKeyPress);
-  }
+    openMenuBtn.setAttribute('aria-expanded', isMenuOpen);
+    mobileMenu.classList.toggle('is-open', isMenuOpen);
 
-  openMenuBtn.setAttribute('aria-expanded', isMenuOpen);
-  mobileMenu.classList.toggle('is-open', isMenuOpen);
-
-  if (isMenuOpen) {
-    document.addEventListener('keydown', handleEscKeyPress);
-  } else {
-    document.removeEventListener('keydown', handleEscKeyPress);
-  }
+    if (isMenuOpen) {
+      document.addEventListener('keydown', handleEscKeyPress);
+    } else {
+      document.removeEventListener('keydown', handleEscKeyPress);
+    }
+  };
 
   const closeModal = () => {
     isMenuOpen = false;
     document.body.classList.toggle('no-scroll');
-    burgerBtn.setAttribute('href', '/images/sprite.svg#icon-gamburger');
+    burgerBtn.setAttribute(
+      'href',
+      new URL('/images/sprite.svg#icon-gamburger', window.location).href
+    );
     mobileMenu.classList.remove('is-open');
     openMenuBtn.setAttribute('aria-expanded', false);
     document.removeEventListener('click', closeModal);
