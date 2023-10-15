@@ -56,9 +56,6 @@ function openModal() {
     modalStyle.style.transform = 'translate(-50%, -50%)';
   }, 50);
 
-  console.log(bookID);
-
-
   // Додавання і видалення обєктів в сховище
   // Поки працює не вірно, ще доробляю
   const shopingListArr = JSON.parse(localStorage.getItem(KEY_NAME))
@@ -71,11 +68,7 @@ function openModal() {
     return;
   } else {
     const objToFind = shopingListArr.find(obj => {
-      console.log(shopingListArr);
-      console.log('id яке шукає', obj._id);
-      console.log('id яке книжки',bookID);
       return obj._id === bookID});
-      console.log('знайдений id', objToFind);
     if (!objToFind) {
     addBook.removeAttribute('hidden');
     removeBook.setAttribute('hidden', true);
@@ -86,7 +79,6 @@ function openModal() {
       textAfterShop.removeAttribute('hidden');   
     }
   }
-  console.log(shopingListArr);
 }
 
 // Функція закриття модального вікна
@@ -147,10 +139,14 @@ function onStorageAdd() {
 }
 
 function onStorageDelete() {
+ 
 
-  const idBookToDelete = openBookObj.id;
+
+  const idBookToDelete = openBookObj._id;
+  console.log(idBookToDelete);
+
   const shopingListArr = JSON.parse(localStorage.getItem(KEY_NAME));
-  const indexBookToDelete = shopingListArr.findIndex(obj => obj.id === idBookToDelete);
+  const indexBookToDelete = shopingListArr.findIndex(obj => obj._id === idBookToDelete);
   shopingListArr.splice(indexBookToDelete, 1);
   localStorage.setItem(KEY_NAME, JSON.stringify(shopingListArr));
 }
