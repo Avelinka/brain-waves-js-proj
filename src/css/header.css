@@ -129,7 +129,13 @@ input:checked + .slider:before {
 }
 
 .gamburger-icon {
-  background-color: var(--white);
+  background-color: white;
+}
+
+.gamburger-icon-dark {
+  background-color: black;
+  stroke: white;
+  border: none;
 }
 
 @media screen and (min-width: 768px) {
