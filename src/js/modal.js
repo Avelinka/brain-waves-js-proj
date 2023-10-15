@@ -1,6 +1,6 @@
 import { getInformationBtId } from './fetch-requests';
 
-const modal = document.querySelector('[data-modal]');
+const modal = document.querySelector('[data-modal-windows]');
 const closeModalButton = document.querySelector('[data-modal-close]');
 const modalStyle = document.querySelector('.modal');
 const shoppingButtonModal = document.querySelector('.shopping-button-modal');
