@@ -1,58 +1,116 @@
+// import Pagination from 'tui-pagination';
+
+import './swither-theme';
+import './mobile-menu';
+import './fonds-ukraine';
+// import './button';
 import { getInformationBtId } from './fetch-requests';
 
-const goToCartButton = document.querySelector('.js-go-to-cart');
-const refJsLIst = document.querySelector('.js-list');
-const container = document.querySelector('.js-list');
+// const goToCartButton = document.querySelector('.js-go-to-cart');
+const emptyElement = document.querySelector('.cart');
+const shopList = document.querySelector('.js-list');
 const storageKey = 'shoping-list';
 const products = JSON.parse(localStorage.getItem(storageKey)) || [];
 
 function createMarkup(arr) {
+  const amazon = {
+    title: 'AmazonMarketplace',
+    img: new URL('../images/mask_group_corrected.png', import.meta.url).href,
+    img2x: new URL('../images/mask_group_corrected@2x.png', import.meta.url)
+      .href,
+  };
+
+  const book = {
+    title: 'Book',
+    img: new URL('../images/image_1.png', import.meta.url).href,
+    img2x: new URL('../images/image_1@2x.png', import.meta.url).href,
+  };
+
+  const imgUrl = new URL('/images/sprite.svg#icon-trash', import.meta.url).href;
+
   return arr
     .map(
-      ({ author, book_image, buy_links, title }) => `
-    <li data-id="${title}" class="js-product shopping-list-item">
-        <img src="${book_image}" alt="${title}" width="116" height="165" class="shop-img"/> 
-        <div class="shop-item-div">
-            <div class="top-item-div">
-                <h2 class="shopping-list-title">${title}</h2>
-                <button class="js-remove" data-id="${title}">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6 2H10M2 4H14M12.6667 4L12.1991 11.0129C12.129 12.065 12.0939 12.5911 11.8667 12.99C11.6666 13.3412 11.3648 13.6235 11.0011 13.7998C10.588 14 10.0607 14 9.00623 14H6.99377C5.93927 14 5.41202 14 4.99889 13.7998C4.63517 13.6235 4.33339 13.3412 4.13332 12.99C3.90607 12.5911 3.871 12.065 3.80086 11.0129L3.33333 4M6.66667 7V10.3333M9.33333 7V10.3333" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-                </button>
+      ({ author, book_image, buy_links, title, description, list_name }) => `
+        <li data-id="${title}" class="js-product shopping-list-item">
+          <div class="shop-list-item-box">
+            <div class="shop-list-img-wrap">
+              <img src="${book_image}" alt="${title}" class="shop-list-img"/> 
             </div>
-            <p class="shopping-list-text">This book provides the reader with deep insights into the lives and
-            experiences of its characters, revealing the complexities of human nature and creating a captivating narrative that leaves a lasting impression on the hearts of readers.</p>
-            <div class="author-icons">
-                <p class="shopping-list-author">${author}</p>
-                <div class="book-links">
-                    ${createBookLinks(buy_links)}
-                </div>
+            <div class="shop-item-div">
+              <h2 class="shopping-list-title">${title}</h2>
+              <p class="shop-list-category">${list_name}</p>
+              <p class="shop-list-text">${description}</p>
+              <h2 class="shopping-list-author">${author}</h2>
             </div>
-        </div>
-    </li>
-`
+            <button type="button" class="js-remove shop-list-trash-btn" data-id="${title}">
+              <svg class="bag-icon" width="16" height="16">
+                <use href=${imgUrl}></use>
+              </svg>
+            </button>
+            <div class="shop-list-amazon-wrap">
+            <a
+              href="${buy_links[0].url}"
+              target="blank"
+              ><img
+              alt="${amazon.title}"
+              class="marketplace-img-modal shop-list-item-link shop-list-amazon"
+              srcset="
+              ${amazon.img}, ${amazon.img2x} 2x
+              "/>
+            </a>
+            </div>
+            <div class="shop-list-book-wrap">
+            <a
+              href="${buy_links[1].url}"
+              target="blank"
+              ><img
+              alt="${book.title}"
+              class="marketplace-img-modal shop-list-item-link shop-list-book"
+              srcset="
+              ${book.img}, ${book.img2x} 2x
+              "/>
+            </a>
+            </div>
+          </div>
+        </li>`
     )
     .join('');
 }
 
 getInformationBtId();
 
-function createBookLinks(buy_links) {
-  return `<a href="${buy_links[0].url}" target="_blank"> <img src="/src/images/mask_group_corrected.png" alt="Link Icon" class="link-icon amazon" width="32" height="11"></a>
-    <a href="${buy_links[1].url}" target="_blank"> <img src="/src/images/image_1.png" alt="Link Icon" class="link-icon apple-book" width="16" height="16"></a>
-    <a href="${buy_links[2].url}" target="_blank"> <img src="/src/images/Icon1.png" alt="Link Icon" class="link-icon book-shop" width="16" height="16"></a>`;
+function updateUI() {
+  console.log(products);
+  if (products.length === 0) {
+    emptyElement.style.display = 'flex';
+    shopList.style.display = 'none';
+    shopList.innerHTML = '';
+  } else {
+    emptyElement.style.display = 'none';
+    shopList.style.display = 'block';
+
+    const markup = createMarkup(products);
+    shopList.innerHTML = markup;
+    // shopList.insertAdjacentHTML('beforeend', markup);
+  }
 }
-console.log(createMarkup(products));
-if (localStorage.getItem('shoping-list') === null) {
-  const hiddenElement = document.querySelector('.hidden-shop-list');
-  const hidden = document.querySelector('.cart');
-  hiddenElement.classList.remove('is-hidden');
-  hidden.classList.add('cart');
-} else {
-  const markup = createMarkup(products);
-  container.insertAdjacentHTML('beforeend', markup);
-}
+updateUI();
+
+// console.log(createMarkup(products));
+// if (localStorage.getItem('shoping-list') === null) {
+//   // const hidden = document.querySelector('.cart');
+//   emptyElement.style.display = 'block';
+//   shopList.style.display = 'none';
+
+//   // hidden.classList.add('cart');
+// } else {
+//   // hiddenElement.classList.add('is-hidden');
+//   emptyElement.style.display = 'none';
+//   shopList.style.display = 'block';
+
+//   const markup = createMarkup(products);
+//   shopList.insertAdjacentHTML('beforeend', markup);
+// }
 
 let removeButtons = document.querySelectorAll('.js-remove');
 
@@ -76,37 +134,51 @@ let removeButtons = document.querySelectorAll('.js-remove');
 function removeProduct(event) {
   let liElement = event.target.closest('.js-product');
   let bookId = liElement.getAttribute('.data-id');
- 
-  if (liElement) {
-     liElement.remove();
-    const shopingListArr = JSON.parse(localStorage.getItem(storageKey));
-  const indexBookToDelete = shopingListArr.findIndex(obj => obj._id ===  bookId);
-  shopingListArr.splice(indexBookToDelete, 1);
-  localStorage.setItem(storageKey, JSON.stringify(shopingListArr));
 
-    if (!document.querySelector('.shopping-list-item')) {
-      const hiddenElement = document.querySelector('.hidden-shop-list');
-      const hidden = document.querySelector('.cart');
-      hiddenElement.classList.remove('is-hidden');
-      hidden.classList.add('cart');
-    }
+  // if (liElement) {
+  //   liElement.remove();
+  //   const shopingListArr = JSON.parse(localStorage.getItem(storageKey));
+  //   const indexBookToDelete = shopingListArr.findIndex(
+  //     obj => obj._id === bookId
+  //   );
+  //   shopingListArr.splice(indexBookToDelete, 1);
+  //   localStorage.setItem(storageKey, JSON.stringify(shopingListArr));
+  if (liElement) {
+    liElement.remove();
+    const indexBookToDelete = products.findIndex(obj => obj.title === bookId);
+    products.splice(indexBookToDelete, 1);
+    updateLocalStorage(); // Оновлюємо localStorage при видаленні товару
+    updateUI(); // Оновлюємо відображення корзини
   }
+  // if (!document.querySelector('.shopping-list-item')) {
+  //   const hiddenElement = document.querySelector('.hidden-shop-list');
+  //   const hidden = document.querySelector('.cart');
+  //   hiddenElement.classList.remove('is-hidden');
+  //   hidden.classList.add('cart');
+  // }
+
+  // }
 }
 
 function updateLocalStorage() {
-  let productIds = [];
+  // let productIds = [];
+  // removeButtons.forEach(function (button) {
+  //   let id = button.getAttribute('data-id');
+  //   productIds.push(id);
+  // });
+  // localStorage.setItem('selectedProducts', JSON.stringify(productIds));
+  // console.log(localStorage);
+  let productIds = products.map(product => product.title);
+  localStorage.setItem(storageKey, JSON.stringify(products));
 
-  removeButtons.forEach(function (button) {
-    let id = button.getAttribute('data-id');
-    productIds.push(id);
-  });
-
-  localStorage.setItem('selectedProducts', JSON.stringify(productIds));
-  console.log(localStorage);
   if (productIds.length === 0) {
-    const messageElement = document.querySelector('.message');
-    messageElement.classList.remove('is-hidden');
+    emptyElement.style.display = 'flex';
+    shopList.style.display = 'none';
   }
+  // if (productIds.length === 0) {
+  //   const messageElement = document.querySelector('.message');
+  //   messageElement.classList.remove('is-hidden');
+  // }
 }
 
 window.addEventListener('beforeunload', function () {
@@ -117,11 +189,11 @@ removeButtons.forEach(function (button) {
   button.addEventListener('click', removeProduct);
 });
 
-function limitWords(text, limit) {
-  const words = text.split(' ');
-  if (words.length <= limit) {
-    return text;
-  } else {
-    return words.slice(0, limit).join(' ') + ' ...';
-  }
-}
+// function limitWords(text, limit) {
+//   const words = text.split(' ');
+//   if (words.length <= limit) {
+//     return text;
+//   } else {
+//     return words.slice(0, limit).join(' ') + ' ...';
+//   }
+// }
