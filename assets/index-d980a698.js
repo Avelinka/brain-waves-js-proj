@@ -1,4 +1,4 @@
-import{N as b,g as S,a as w,b as F,c as P}from"./swither-theme-b09673db.js";async function L(e){return e.map(o=>{if(o.books.length===0){b.Notify.failure("Sorry, there are no books matching your search query. Please try again.");return}const a=M(o);return`<div class="category-box">
+import{N as b,g as S,a as w,b as F,c as P}from"./swither-theme-77c7556c.js";async function L(e){return e.map(o=>{if(o.books.length===0){b.Notify.failure("Sorry, there are no books matching your search query. Please try again.");return}const a=M(o);return`<div class="category-box">
         <h3 class = "category-titel">${o.list_name}</h3>
         <ul class="books-list">
             ${a}
