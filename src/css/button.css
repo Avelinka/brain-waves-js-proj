@@ -9,8 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-up-wrap {
@@ -26,5 +25,4 @@
 .btn-up:hover,
 .btn-up:focus {
   background-color: #4f2ee8;
-  scale: 1.1;
 }

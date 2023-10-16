@@ -138,7 +138,7 @@ function onStorageAdd() {
 
 function onStorageDelete() {
   const idBookToDelete = openBookObj._id;
-  console.log(idBookToDelete);
+  // console.log(idBookToDelete);
 
   const shopingListArr = JSON.parse(localStorage.getItem(KEY_NAME));
   const indexBookToDelete = shopingListArr.findIndex(
@@ -178,8 +178,14 @@ async function getDataBook(id) {
 
 // Створення розмітки для модального вікна
 
-
-function creatMarkupModal({ book_image, title, author, description, amazon_product_url, buy_links }) {
+function creatMarkupModal({
+  book_image,
+  title,
+  author,
+  description,
+  amazon_product_url,
+  buy_links,
+}) {
   const amazomImg = {
     title: 'AmazonMarketplace',
     img: new URL('../images/mask_group_corrected.png', import.meta.url).href,
