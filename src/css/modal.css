@@ -129,6 +129,7 @@ body.modal-open {
   letter-spacing: -0.14px;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 250ms;
 }
 
 .more-btn:hover,
