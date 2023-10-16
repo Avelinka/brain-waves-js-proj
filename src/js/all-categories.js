@@ -1,60 +1,68 @@
 import Notiflix from 'notiflix';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { createCategoryMarkap } from './all-categories-books-field';
 import { createBookMarkup } from './all-categories-books-field';
-import { getBooksByCategory, getBookCategories} from './fetch-requests';
+import { getBooksByCategory, getBookCategories } from './fetch-requests';
 import { home } from './home';
 import { getAllBooksByCategory } from './home';
 
 const allList = document.querySelector('.all-category-list'); //список для категорій
 const categoryField = document.querySelector('.field-categories'); // лів Павла
 const booksField = document.querySelector('.books-field-wrapper'); // мій дів
-buildCategoryMeny()
+buildCategoryMeny();
 async function buildCategoryMeny() {
   const namesArr = await getBookCategories();
-  const markup = menuMarkup(namesArr)
-  allList.insertAdjacentHTML('beforeend', markup)
+  const markup = menuMarkup(namesArr);
+  allList.insertAdjacentHTML('beforeend', markup);
 }
 
 //розмітка меню категорій
 function menuMarkup(arr) {
-  const markup = arr.map((name) => {
-    return ` <li>
+  const markup = arr
+    .map(name => {
+      return ` <li>
       <button
         class="all-category-button"
         type="button"
         name="${name.list_name}">
         ${name.list_name}
       </button>
-    </li>`
-  }
-  ).join('')
-  return markup
+    </li>`;
+    })
+    .join('');
+  return markup;
 }
-
 
 allList.addEventListener('click', sortForCategory);
 
 async function sortForCategory(event) {
   if (event.target.nodeName !== 'BUTTON') return;
+
   const categoryName = event.target.name;
+
   //console.log(categoryName);
 
   try {
+    Loading.arrows();
     if (categoryName === 'All categories') {
       resetDedicatedCategory();
       event.target.classList.add('dedicated-category');
-      booksField.hidden = false
-      categoryField.hidden = true
-      //getAllBooksByCategory();
+      booksField.hidden = false;
+      categoryField.hidden = true;
+      Loading.remove(500);
       return;
     } else {
-      showAllBooksByCategory(categoryName)
+      Loading.arrows();
+      showAllBooksByCategory(categoryName);
       resetDedicatedCategory();
       event.target.classList.add('dedicated-category');
+      Loading.remove(500);
     }
   } catch (error) {
-    Notiflix.Notify.failure('Sorry, there are no books matching your search query. Please try again.')
-    return
+    Notiflix.Notify.failure(
+      'Sorry, there are no books matching your search query. Please try again.'
+    );
+    return;
   }
 }
 
@@ -63,7 +71,7 @@ export async function showAllBooksByCategory(name) {
   categoryField.hidden = false;
 
   const getCategoryName = await getBooksByCategory(name);
-     
+
   const listMarkup = await createMarkup(getCategoryName, name);
   //console.log(listMarkup);
   categoryField.innerHTML = listMarkup;
@@ -78,7 +86,10 @@ export async function createMarkup(array, categoryName) {
   const oneBook = markup(array);
 
   return `<h2 class="book-field-name">
-  <span class="first-word">${categoryName.split(' ').slice(0, -1).join(' ')}</span>
+  <span class="first-word">${categoryName
+    .split(' ')
+    .slice(0, -1)
+    .join(' ')}</span>
   <span class="last-word">${categoryName.split(' ').pop()}</span>
 </h2><ul class="field-books book-list"> ${oneBook}  </ul>`;
 }

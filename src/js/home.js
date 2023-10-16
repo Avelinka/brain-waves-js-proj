@@ -10,6 +10,7 @@ const categoryField = document.querySelector('.field-categories');
 home();
 export async function home() {
   try {
+    Loading.arrows();
     const topArr = await getTopBooks();
     const markup = await createCategoryMarkap(topArr);
     booksField.insertAdjacentHTML('beforeend', markup);
@@ -18,6 +19,7 @@ export async function home() {
     moreBtn.forEach(btn =>
       btn.addEventListener('click', getAllBooksByCategory)
     );
+    Loading.remove(500);
   } catch (error) {
     Notiflix.Notify.failure(
       'Sorry, there are no books matching your search query. Please try again.'
