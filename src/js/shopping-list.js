@@ -6,9 +6,10 @@ import './fonds-ukraine';
 // import './button';
 import { getInformationBtId } from './fetch-requests';
 
-// const goToCartButton = document.querySelector('.js-go-to-cart');
 const emptyElement = document.querySelector('.cart');
 const shopList = document.querySelector('.js-list');
+let removeButtons = document.querySelectorAll('.js-remove');
+
 const storageKey = 'shoping-list';
 const products = JSON.parse(localStorage.getItem(storageKey)) || [];
 
@@ -80,7 +81,6 @@ function createMarkup(arr) {
 getInformationBtId();
 
 function updateUI() {
-  console.log(products);
   if (products.length === 0) {
     emptyElement.style.display = 'flex';
     shopList.style.display = 'none';
@@ -91,83 +91,33 @@ function updateUI() {
 
     const markup = createMarkup(products);
     shopList.innerHTML = markup;
-    // shopList.insertAdjacentHTML('beforeend', markup);
+    attachRemoveHandlers();
   }
 }
+
+function attachRemoveHandlers() {
+  removeButtons = document.querySelectorAll('.js-remove');
+  removeButtons.forEach(function (button) {
+    button.addEventListener('click', removeProduct);
+  });
+}
+
 updateUI();
-
-// console.log(createMarkup(products));
-// if (localStorage.getItem('shoping-list') === null) {
-//   // const hidden = document.querySelector('.cart');
-//   emptyElement.style.display = 'block';
-//   shopList.style.display = 'none';
-
-//   // hidden.classList.add('cart');
-// } else {
-//   // hiddenElement.classList.add('is-hidden');
-//   emptyElement.style.display = 'none';
-//   shopList.style.display = 'block';
-
-//   const markup = createMarkup(products);
-//   shopList.insertAdjacentHTML('beforeend', markup);
-// }
-
-let removeButtons = document.querySelectorAll('.js-remove');
-
-// function removeProduct(event) {
-//   let liElement = event.target.closest('.js-product');
-//   if (liElement) {
-//     liElement.remove();
-//     localStorage.removeItem('shoping-list');
-//     console.log('Дані видалені із локального сховища.');
-//     updateLocalStorage();
-
-//     if (!document.querySelector('.shopping-list-item')) {
-//       const hiddenElement = document.querySelector('.hidden-shop-list');
-//       const hidden = document.querySelector('.cart');
-//       hiddenElement.classList.remove('is-hidden');
-//       hidden.classList.add('cart');
-//     }
-//   }
-// }
 
 function removeProduct(event) {
   let liElement = event.target.closest('.js-product');
   let bookId = liElement.getAttribute('.data-id');
 
-  // if (liElement) {
-  //   liElement.remove();
-  //   const shopingListArr = JSON.parse(localStorage.getItem(storageKey));
-  //   const indexBookToDelete = shopingListArr.findIndex(
-  //     obj => obj._id === bookId
-  //   );
-  //   shopingListArr.splice(indexBookToDelete, 1);
-  //   localStorage.setItem(storageKey, JSON.stringify(shopingListArr));
   if (liElement) {
     liElement.remove();
     const indexBookToDelete = products.findIndex(obj => obj.title === bookId);
     products.splice(indexBookToDelete, 1);
-    updateLocalStorage(); // Оновлюємо localStorage при видаленні товару
-    updateUI(); // Оновлюємо відображення корзини
+    updateLocalStorage();
+    updateUI();
   }
-  // if (!document.querySelector('.shopping-list-item')) {
-  //   const hiddenElement = document.querySelector('.hidden-shop-list');
-  //   const hidden = document.querySelector('.cart');
-  //   hiddenElement.classList.remove('is-hidden');
-  //   hidden.classList.add('cart');
-  // }
-
-  // }
 }
 
 function updateLocalStorage() {
-  // let productIds = [];
-  // removeButtons.forEach(function (button) {
-  //   let id = button.getAttribute('data-id');
-  //   productIds.push(id);
-  // });
-  // localStorage.setItem('selectedProducts', JSON.stringify(productIds));
-  // console.log(localStorage);
   let productIds = products.map(product => product.title);
   localStorage.setItem(storageKey, JSON.stringify(products));
 
@@ -175,10 +125,6 @@ function updateLocalStorage() {
     emptyElement.style.display = 'flex';
     shopList.style.display = 'none';
   }
-  // if (productIds.length === 0) {
-  //   const messageElement = document.querySelector('.message');
-  //   messageElement.classList.remove('is-hidden');
-  // }
 }
 
 window.addEventListener('beforeunload', function () {
@@ -188,12 +134,3 @@ window.addEventListener('beforeunload', function () {
 removeButtons.forEach(function (button) {
   button.addEventListener('click', removeProduct);
 });
-
-// function limitWords(text, limit) {
-//   const words = text.split(' ');
-//   if (words.length <= limit) {
-//     return text;
-//   } else {
-//     return words.slice(0, limit).join(' ') + ' ...';
-//   }
-// }
