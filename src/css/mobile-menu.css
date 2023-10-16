@@ -103,3 +103,11 @@
 .current-page {
   color: #111;
 }
+
+.shopping-current-page {
+  color: var(--black);
+}
+
+.theme-dark .current-page {
+  color: #111;
+}

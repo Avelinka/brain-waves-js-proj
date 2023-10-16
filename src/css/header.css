@@ -168,7 +168,7 @@ input:checked + .slider:before {
   }
 
   .bag-icon {
-    stroke: var(--black);
+    stroke: #fff;
   }
 
   .current-page {
@@ -176,6 +176,22 @@ input:checked + .slider:before {
     padding: 8px 16px;
     border-radius: 36px;
     background: var(--yellow);
+    color: #111;
+  }
+
+  .shopping-current-page {
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 36px;
+    background: var(--yellow);
+    color: #111;
+  }
+
+  .theme-dark .current-page {
+    color: #111;
+  }
+
+  .theme-dark .shopping-current-page {
     color: #111;
   }
 
