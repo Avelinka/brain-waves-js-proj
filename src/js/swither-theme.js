@@ -1,6 +1,7 @@
 const slider = document.querySelector('#toggle-slider');
 const svgBackColor = document.querySelector('.gamburger-icon');
 
+localStorage.removeItem('theme');
 slider.addEventListener('change', (evt) => {
     evt.preventDefault();
     if (localStorage.getItem('theme') === 'theme-dark') {
