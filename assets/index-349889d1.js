@@ -1,4 +1,4 @@
-import{N as z,c as M,g as de,a as me,b as fe,d as J}from"./swither-theme-89ee8e47.js";async function ue(i){return i.map(n=>{if(n.books.length===0){z.Notify.failure("Sorry, there are no books matching your search query. Please try again.");return}const c=ge(n);return`<div class="category-box">
+import{N as z,c as M,g as de,a as me,b as fe,d as J}from"./swither-theme-a7280467.js";async function ue(i){return i.map(n=>{if(n.books.length===0){z.Notify.failure("Sorry, there are no books matching your search query. Please try again.");return}const c=ge(n);return`<div class="category-box">
         <h3 class = "category-titel">${n.list_name}</h3>
         <ul class="books-list">
             ${c}
