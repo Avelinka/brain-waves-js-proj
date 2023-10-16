@@ -182,8 +182,7 @@ async function getDataBook(id) {
 
 // Створення розмітки для модального вікна
 
-function creatMarkupModal({ book_image, title, author, amazon_product_url }) {
-
+function creatMarkupModal({ book_image, title, author, description, amazon_product_url, buy_links }) {
   const amazomImg = {
     title: 'AmazonMarketplace',
     img: new URL('../images/mask_group_corrected.png', import.meta.url).href,
@@ -196,6 +195,8 @@ function creatMarkupModal({ book_image, title, author, amazon_product_url }) {
     img2x: new URL('../images/image_1@2x.png', import.meta.url).href,
   };
 
+  const descriptionText = description ? description : 'This book provides the reader with deep insights into the lives and experiences of its characters, revealing the complexities of human nature and creating a captivating narrative that leaves a lasting impression on the hearts of readers.';
+
   return `<div class="book-inform-modal-wraper">
              <div class="modal-img-wrapper">
                  <img class="modal-img" src="${book_image}" alt="book-image" />
@@ -204,15 +205,13 @@ function creatMarkupModal({ book_image, title, author, amazon_product_url }) {
                 <div class="text-infor-wrapper">
                      <p class="book-header-modal">${title}</p>
                      <p class="book-author-modal">${author}</p>
-                     <p class="book-description-modal">
-      This book provides the reader with deep insights into the lives and
-      experiences of its characters, revealing the complexities of human nature and creating a captivating narrative that leaves a lasting impression on the hearts of readers.
+                     <p class="book-description-modal">${descriptionText} 
                     </p>
 
                     <div class="marketplace-img-modal-wrapper">
                     <a
                       href="${amazon_product_url}"
-                      target="blank"
+                      target="_blank"
                       ><img
                         alt="${amazomImg.title}"
                         class="marketplace-img-modal"
@@ -221,10 +220,14 @@ function creatMarkupModal({ book_image, title, author, amazon_product_url }) {
                       "/>
                       </a>
                     
-                    <img  ${bookInfoImg.title} class="book-img-modal" 
-                    srcset="
-                    ${bookInfoImg.img}, ${bookInfoImg.img2x} 2x
+                      <a
+                      href="${buy_links[1].url}"
+                      target="_blank"> 
+                      <img  ${bookInfoImg.title} class="book-img-modal" 
+                      srcset="
+                      ${bookInfoImg.img}, ${bookInfoImg.img2x} 2x
                     "/>
+                    </a>
                   
                   </div>
 
