@@ -15,10 +15,9 @@ shoppingButtonModal.addEventListener('click', shoppingButton);
 bookListLisener.addEventListener('click', GetId);
 
 let bookID = '';
-const KEY_NAME = "shoping-list";
+const KEY_NAME = 'shoping-list';
 let shopingListArr = [];
-let openBookObj = {}; 
-
+let openBookObj = {};
 
 // Секція відкриття і закриття модалки
 
@@ -58,8 +57,7 @@ function openModal() {
 
   // Додавання і видалення обєктів в сховище
   // Поки працює не вірно, ще доробляю
-  const shopingListArr = JSON.parse(localStorage.getItem(KEY_NAME))
-
+  const shopingListArr = JSON.parse(localStorage.getItem(KEY_NAME));
 
   if (!shopingListArr || shopingListArr.length === 0) {
     addBook.removeAttribute('hidden');
@@ -68,15 +66,16 @@ function openModal() {
     return;
   } else {
     const objToFind = shopingListArr.find(obj => {
-      return obj._id === bookID});
+      return obj._id === bookID;
+    });
     if (!objToFind) {
-    addBook.removeAttribute('hidden');
-    removeBook.setAttribute('hidden', true);
-    textAfterShop.setAttribute('hidden', true);
+      addBook.removeAttribute('hidden');
+      removeBook.setAttribute('hidden', true);
+      textAfterShop.setAttribute('hidden', true);
     } else {
       addBook.setAttribute('hidden', true);
       removeBook.removeAttribute('hidden');
-      textAfterShop.removeAttribute('hidden');   
+      textAfterShop.removeAttribute('hidden');
     }
   }
 }
@@ -106,14 +105,13 @@ function closeModal() {
 
 function shoppingButton() {
   if (removeBook.hasAttribute('hidden')) {
-
     // Обробка візуальної складової
     addBook.setAttribute('hidden', true);
     removeBook.removeAttribute('hidden');
-    textAfterShop.removeAttribute('hidden');   
+    textAfterShop.removeAttribute('hidden');
 
     // Додавання книжки до локального сховища
-    onStorageAdd()
+    onStorageAdd();
   } else {
     // Обробка візуальної складової
     addBook.removeAttribute('hidden');
@@ -121,7 +119,7 @@ function shoppingButton() {
     textAfterShop.setAttribute('hidden', true);
 
     // Видалення книжки з локального сховища
-    onStorageDelete()
+    onStorageDelete();
   }
 }
 
@@ -139,26 +137,24 @@ function onStorageAdd() {
 }
 
 function onStorageDelete() {
- 
-
-
   const idBookToDelete = openBookObj._id;
   console.log(idBookToDelete);
 
   const shopingListArr = JSON.parse(localStorage.getItem(KEY_NAME));
-  const indexBookToDelete = shopingListArr.findIndex(obj => obj._id === idBookToDelete);
+  const indexBookToDelete = shopingListArr.findIndex(
+    obj => obj._id === idBookToDelete
+  );
   shopingListArr.splice(indexBookToDelete, 1);
   localStorage.setItem(KEY_NAME, JSON.stringify(shopingListArr));
 }
 // *****************************************
-
 
 // Отримання ID книжки
 
 function GetId(event) {
   const clickedElement = event.target;
   const quickViewEl = clickedElement.closest('.quick-view');
-  
+
   if (quickViewEl) {
     bookID = quickViewEl.getAttribute('data-id-book');
   } else {
@@ -167,10 +163,10 @@ function GetId(event) {
 
   openModal();
   createModalMarkup(bookID);
-  getDataBook(bookID)
+  getDataBook(bookID);
 }
 
- // Отримання даних про обєкт з книжкою
+// Отримання даних про обєкт з книжкою
 
 async function getDataBook(id) {
   try {
@@ -183,11 +179,11 @@ async function getDataBook(id) {
 // Створення розмітки для модального вікна
 
 function creatMarkupModal({ book_image, title, author, amazon_product_url }) {
-
   const amazomImg = {
     title: 'AmazonMarketplace',
     img: new URL('../images/mask_group_corrected.png', import.meta.url).href,
-    img2x: new URL('../images/mask_group_corrected@2x.png', import.meta.url).href,
+    img2x: new URL('../images/mask_group_corrected@2x.png', import.meta.url)
+      .href,
   };
 
   const bookInfoImg = {

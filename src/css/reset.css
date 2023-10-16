@@ -1,9 +1,9 @@
 :root {
-  /* font-synthesis: none;
+  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%; */
+  -webkit-text-size-adjust: 100%;
 
   --white: #fff;
   --yellow: #eac645;
@@ -55,7 +55,8 @@ button {
   font-family: inherit;
 }
 
-img {
+img,
+picture {
   display: block;
   max-width: 100%;
   height: auto;
