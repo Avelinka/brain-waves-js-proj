@@ -115,6 +115,7 @@ li.book-card.books {
   line-height: 1.28;
   letter-spacing: -0.01em;
   text-transform: uppercase;
+  transition: all 250ms;
 }
 
 /*------------------------TABLET-------------------*/
