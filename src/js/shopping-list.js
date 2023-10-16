@@ -4,7 +4,6 @@ import './swither-theme';
 import './mobile-menu';
 import './fonds-ukraine';
 import './button';
-import { getInformationBtId } from './fetch-requests';
 
 const emptyElement = document.querySelector('.cart');
 const shopList = document.querySelector('.js-list');
@@ -48,7 +47,8 @@ function createMarkup(arr) {
                 <use href=${imgUrl}></use>
               </svg>
             </button>
-            <div class="shop-list-amazon-wrap">
+            <ul>
+            <li class="shop-list-amazon-wrap">
             <a
               href="${buy_links[0].url}"
               target="blank"
@@ -59,8 +59,8 @@ function createMarkup(arr) {
               ${amazon.img}, ${amazon.img2x} 2x
               "/>
             </a>
-            </div>
-            <div class="shop-list-book-wrap">
+            </li>
+            <li class="shop-list-book-wrap">
             <a
               href="${buy_links[1].url}"
               target="blank"
@@ -71,14 +71,13 @@ function createMarkup(arr) {
               ${book.img}, ${book.img2x} 2x
               "/>
             </a>
-            </div>
+            </li>
+            </ul>
           </div>
         </li>`
     )
     .join('');
 }
-
-getInformationBtId();
 
 function updateUI() {
   if (products.length === 0) {
@@ -112,7 +111,6 @@ function removeProduct(event) {
     liElement.remove();
     const indexBookToDelete = products.findIndex(obj => obj._id === bookId);
     products.splice(indexBookToDelete, 1);
-    updateLocalStorage();
     updateUI();
   }
 }
