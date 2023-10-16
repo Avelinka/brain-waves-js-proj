@@ -31,8 +31,8 @@ function createMarkup(arr) {
 
   return arr
     .map(
-      ({ author, book_image, buy_links, title, description, list_name }) => `
-        <li data-id="${title}" class="js-product shopping-list-item">
+      ({ _id, author, book_image, buy_links, title, description, list_name }) => `
+        <li data-id="${_id}" class="js-product shopping-list-item">
           <div class="shop-list-item-box">
             <div class="shop-list-img-wrap">
               <img src="${book_image}" alt="${title}" class="shop-list-img"/> 
@@ -110,25 +110,15 @@ function removeProduct(event) {
 
   if (liElement) {
     liElement.remove();
-    const indexBookToDelete = products.findIndex(obj => obj.title === bookId);
+    const indexBookToDelete = products.findIndex(obj => obj._id === bookId);
     products.splice(indexBookToDelete, 1);
     updateLocalStorage();
     updateUI();
   }
 }
 
-function updateLocalStorage() {
-  let productIds = products.map(product => product.title);
-  localStorage.setItem(storageKey, JSON.stringify(products));
-
-  if (productIds.length === 0) {
-    emptyElement.style.display = 'flex';
-    shopList.style.display = 'none';
-  }
-}
-
 window.addEventListener('beforeunload', function () {
-  localStorage.setItem(storageKey);
+  localStorage.setItem(storageKey, JSON.stringify(products));
 });
 
 removeButtons.forEach(function (button) {
