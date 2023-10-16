@@ -1,13 +1,14 @@
 const slider = document.querySelector('#toggle-slider');
 const svgBackColor = document.querySelector('.gamburger-icon');
 
-localStorage.removeItem('theme');
 slider.addEventListener('change', (evt) => {
     evt.preventDefault();
     if (localStorage.getItem('theme') === 'theme-dark') {
         localStorage.removeItem('theme');
+          localStorage.setItem('sliderPosition', 'left');
     } else {
-        localStorage.setItem('theme', 'theme-dark')
+        localStorage.setItem('theme', 'theme-dark');
+         localStorage.setItem('sliderPosition', 'right');
     }
     addThemeDarkClass()
 });
@@ -23,4 +24,15 @@ function addThemeDarkClass() {
         }
     } catch (err) { }
 }
+
+function restoreSliderPosition() {
+  const sliderPosition = localStorage.getItem('sliderPosition');
+  if (sliderPosition === 'right') {
+    slider.checked = true;
+  } else {
+    slider.checked = false;
+  }
+}
+
+restoreSliderPosition();
 addThemeDarkClass();
