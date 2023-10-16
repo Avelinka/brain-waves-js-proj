@@ -30,7 +30,15 @@ function createMarkup(arr) {
 
   return arr
     .map(
-      ({ _id, author, book_image, buy_links, title, description, list_name }) => `
+      ({
+        _id,
+        author,
+        book_image,
+        buy_links,
+        title,
+        description,
+        list_name,
+      }) => `
         <li data-id="${_id}" class="js-product shopping-list-item">
           <div class="shop-list-item-box">
             <div class="shop-list-img-wrap">
@@ -109,15 +117,14 @@ function removeProduct(event) {
 
   if (liElement) {
     liElement.remove();
-    const indexBookToDelete = products.findIndex(obj => obj._id === bookId);
-    products.splice(indexBookToDelete, 1);
-    updateUI();
+    const shopingListArr = JSON.parse(localStorage.getItem(storageKey));
+    const indexBookToDelete = shopingListArr.findIndex(
+      obj => obj._id === bookId
+    );
+    shopingListArr.splice(indexBookToDelete, 1);
+    localStorage.setItem(storageKey, JSON.stringify(shopingListArr));
   }
 }
-
-window.addEventListener('beforeunload', function () {
-  localStorage.setItem(storageKey, JSON.stringify(products));
-});
 
 removeButtons.forEach(function (button) {
   button.addEventListener('click', removeProduct);
