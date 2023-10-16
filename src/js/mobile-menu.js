@@ -4,7 +4,6 @@
   const closeMenuBtn1 = document.querySelector('.js-close-menu-1');
   const closeMenuBtn2 = document.querySelector('.js-close-menu-2');
   const burgerBtn = document.querySelector('#js-icon');
-  //const closeMenuBtnIcon = document.querySelector('.js-close-menu-icon'); //  кнопка з хрестиком
 
   let isMenuOpen = false;
 
@@ -57,8 +56,7 @@
   openMenuBtn.addEventListener('click', toggleMenu);
   closeMenuBtn1.addEventListener('click', toggleMenu);
   closeMenuBtn2.addEventListener('click', toggleMenu);
-  //closeMenuBtnIcon.addEventListener('click', closeModal); //  слухач подій для хрестика
-
+  
   document.addEventListener('keydown', handleEscKeyPress);
 
   window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
