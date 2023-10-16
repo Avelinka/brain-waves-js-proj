@@ -210,28 +210,26 @@ function creatMarkupModal({
                      <p class="book-description-modal">${description} 
                     </p>
 
-                    <div class="marketplace-img-modal-wrapper">
-                    <a
-                      href="${amazon_product_url}"
-                      target="_blank"
-                      ><img
-                        alt="${amazomImg.title}"
-                        class="marketplace-img-modal"
-                        srcset="
-                        ${amazomImg.img}, ${amazomImg.img2x} 2x
-                      "/>
-                      </a>
-                    
-                      <a
-                      href="${buy_links[1].url}"
-                      target="_blank"> 
-                      <img  ${bookInfoImg.title} class="book-img-modal" 
-                      srcset="
-                      ${bookInfoImg.img}, ${bookInfoImg.img2x} 2x
-                    "/>
-                    </a>
-                  
-                  </div>
+                    <ul class="marketplace-img-modal-wrapper">
+                    <li>
+                     <a href="${amazon_product_url}" target="_blank" rel="noopener noreferrer"
+                     ><img
+                     alt="${amazomImg.title}"
+                     class="marketplace-img-modal"
+                     srcset="${amazomImg.img}, ${amazomImg.img2x} 2x"
+                      />
+                     </a>
+                     </li>
+                     <li>
+                      <a href="${buy_links[1].url}" target="_blank" rel="noopener noreferrer">
+                     <img
+                      ${bookInfoImg.title}
+                     class="book-img-modal"
+                     srcset="${bookInfoImg.img}, ${bookInfoImg.img2x} 2x"
+                      />
+                     </a>
+                   </li>
+                  </ul>
 
              <div class="marketplace-img-modal-wrapper"></div>
             </div>
