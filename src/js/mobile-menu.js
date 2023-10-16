@@ -56,8 +56,8 @@
   openMenuBtn.addEventListener('click', toggleMenu);
   closeMenuBtn1.addEventListener('click', toggleMenu);
   closeMenuBtn2.addEventListener('click', toggleMenu);
-  
-  document.addEventListener('keydown', handleEscKeyPress);
+
+  mobileMenu.addEventListener('keydown', handleEscKeyPress);
 
   window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
     if (!e.matches) return;
