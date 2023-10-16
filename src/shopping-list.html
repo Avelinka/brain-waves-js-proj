@@ -16,7 +16,57 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load ="./partials/header.html" />
+    <header class="header">
+      <div class="header-container container">
+        <div class="header-wraper">
+          <div class="logo-wraper">
+            <a href="./index.html" class="header-logo">
+              <svg class="logo-icon" width="24" height="24">
+                <use href="/images/sprite.svg#icon-logo"></use>
+              </svg>
+              <svg class="header-logo-text" width="77" height="14">
+                <use
+                  class="header-logo-text-icon"
+                  href="/images/sprite.svg#icon-logo-text"
+                ></use>
+              </svg>
+            </a>
+          </div>
+          <nav class="header-menu">
+            <ul class="header-menu-list">
+              <li class="page-item">
+                <a class="page-link" href="./index.html">Home</a>
+              </li>
+              <li class="page-item current-page">
+                <div class="shopping-list-wrap">
+                  <a class="page-link" href="./shopping-list.html"
+                    >Shopping list</a
+                  >
+                  <a class="shopping-bag-icon" href="./shopping-list.html">
+                    <svg class="bag-icon" width="20" height="20">
+                      <use href="/images/sprite.svg#icon-bag"></use>
+                    </svg>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="toggle-container">
+          <div class="switcher-container">
+            <label id="switch" class="switcher">
+              <input type="checkbox" id="toggle-slider" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <button type="button" class="menu-icon js-open-menu">
+            <svg class="gamburger-icon" width="28" height="28">
+              <use id="js-icon" href="/images/sprite.svg#icon-gamburger"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
     <load ="./partials/mobile-menu.html" />
     <main>
       <section class="shopping-wrap">
