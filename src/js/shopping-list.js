@@ -3,7 +3,7 @@
 import './swither-theme';
 import './mobile-menu';
 import './fonds-ukraine';
-// import './button';
+import './button';
 import { getInformationBtId } from './fetch-requests';
 
 const emptyElement = document.querySelector('.cart');
