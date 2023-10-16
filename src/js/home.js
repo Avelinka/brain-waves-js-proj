@@ -1,8 +1,10 @@
 //ВСІ НАЛШТУВАННЯ, ЩО МАЮТЬ БУТИ ПРИ ЗАВАНТАЖЕННІ СТОРІНКИ HOME
 import { createCategoryMarkap } from "./all-categories-books-field"
 import { getTopBooks } from "./fetch-requests"
+import {showAllBooksByCategory} from './all-categories'
 
 const booksField = document.querySelector('.js-books-field-wrapper')
+const categoryField = document.querySelector('.field-categories')
 
 home()
 export async function home() {
@@ -15,12 +17,22 @@ export async function home() {
         moreBtn.forEach(btn => btn.addEventListener('click', getAllBooksByCategory))  
       
     } catch (error) {
-        console.log(error)
+        Notiflix.Notify.failure('Sorry, there are no books matching your search query. Please try again.')
+        return
     }
 }
 
-
-function getAllBooksByCategory(evt) {
-    console.log('test. Далі має зʼявитись div Павла')
-    booksField.hidden = true
+//по see more
+export async function getAllBooksByCategory(evt) {
+    const getCategoryName = evt.currentTarget.dataset.category
+    showAllBooksByCategory(getCategoryName)
+    const selectedCategory = document.querySelector(`button[name="${getCategoryName}"]`)
+    selectedCategory.classList.add('dedicated-category')
+    const allCategortBtn = document.querySelector('button[name="All categories"]')
+    allCategortBtn.classList.remove('dedicated-category')
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
 }

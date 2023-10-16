@@ -6,9 +6,11 @@ button {
 .header-container {
   display: flex;
   height: 64px;
+  max-width: 767px;
   justify-content: space-between;
   align-items: center;
-  border: 1.5px solid #111;
+  background-color: var(--white);
+  border: 1.5px solid var(--black);
   border-radius: 0 0 8px 8px;
 }
 
@@ -32,6 +34,7 @@ button {
 
 .header-logo-text {
   margin-left: 8px;
+  fill: var(--black);
 }
 
 .header-menu {
@@ -68,7 +71,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #4f2ee8;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -85,25 +88,24 @@ button {
   margin: auto 0;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  box-shadow: 0 0px 15px #2020203d;
-  background: white url('https://i.ibb.co/FxzBYR9/night.png');
+  background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
   background-repeat: no-repeat;
   background-position: center;
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: #acb6be;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px #acb6be;
 }
 
 input:checked + .slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
   transform: translateX(20px);
-  background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+  background: white url('https://i.ibb.co/FxzBYR9/night.png');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -119,16 +121,25 @@ input:checked + .slider:before {
 .menu-icon {
   height: 28px;
   margin-left: 14px;
-  stroke: #111;
+  stroke: var(--black);
 }
 
 .menu-icon:hover {
-  stroke: #4f2ee8;
+  stroke: var(--violet);
+}
+
+.gamburger-icon {
+  background-color: var(--white);
+}
+
+.gamburger-icon-dark {
+  stroke: white;
 }
 
 @media screen and (min-width: 768px) {
   .header-container {
     height: 72px;
+    max-width: 1439px;
   }
 
   .header-logo {
@@ -148,7 +159,7 @@ input:checked + .slider:before {
   }
 
   .page-item {
-    color: #111;
+    color: var(--black);
     font-family: DM Sans;
     font-weight: 500;
     line-height: 1.28;
@@ -156,11 +167,16 @@ input:checked + .slider:before {
     text-transform: uppercase;
   }
 
+  .bag-icon {
+    stroke: var(--black);
+  }
+
   .current-page {
     font-weight: 700;
     padding: 8px 16px;
     border-radius: 36px;
-    background: #eac645;
+    background: var(--yellow);
+    color: #111;
   }
 
   .shopping-bag-icon {

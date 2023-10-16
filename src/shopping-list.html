@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookshelf</title>
     <link
@@ -15,18 +16,51 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <load ="./partials/header.html" />
+    <load ="./partials/mobile-menu.html" />
     <main>
-      <div class="">
-        <section class="">
-          <h1 class="">Shopping <span class="">List</span></h1>
-          <div class="js-shopping-cart">
-            <ul class="js-cart-list"></ul>
-            <div id="pagination" class=""></div>
+      <section class="shopping-wrap">
+        <div class="shopping-div container">
+          <div class="shopping-div-support">
+            <load ="./partials/fonds-ukraine.html" />
           </div>
-        </section>
-      </div>
+          <div class="container-shops-list">
+            <h1 class="shopping-title">
+              Shopping<span class="span-list"> List</span>
+            </h1>
+            <div class="hidden-shop-list cart">
+              <p class="empty-cart-notification">
+                This page is empty, add some books and proceed to order.
+              </p>
+              <picture class="empty-cart-img">
+                <source
+                  srcset="
+                    ./images/mob-shoping-list.png    1x,
+                    ./images/mob-shoping-list@2x.png 2x
+                  "
+                  media="(max-width: 767px)"
+                />
+                <source
+                  srcset="
+                    ./images/desk-tab-shoping-list.png    1x,
+                    ./images/desk-tab-shoping-list@2x.png 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <img
+                  src="./images/desk-tab-shoping-list.png"
+                  alt="Books"
+                  width="322"
+                />
+              </picture>
+            </div>
+            <ul class="js-list shopping-list-section"></ul>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script type="module" src="./js/shopping-list.js"></script>
+    <!-- <script type="module" src="/main.js"></script> -->
   </body>
 </html>

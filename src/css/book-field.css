@@ -16,19 +16,7 @@
     margin-top: 40px;
   }
 }
-.field-books {
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 
-    max-width: 704px;
-    flex-wrap: wrap;
-  }
-  @media screen and (min-width: 1440px) {
-    max-width: 996px;
-  }
-}
 
 /* Стилі динамічної розмітки */
 .books {
@@ -36,16 +24,18 @@
   margin-bottom: 40px;
 
   img {
-    max-width: 335px;
+    width: 335px;
     border-radius: 8px;
 
     margin-bottom: 14px;
 
     @media screen and (min-width: 768px) {
       max-width: 218px;
+      height: 316px;
     }
     @media screen and (min-width: 1440px) {
-      max-width: 180px;
+      width: 180px;
+      height:256px;
     }
   }
 
@@ -69,4 +59,16 @@
   .books:last-child {
     margin-bottom: 0px;
   }
+}
+
+.dedicated-category {
+  font-weight: 700;
+  font-size: 18px;
+  color: #4f2ee8;
+  text-transform: uppercase;
+  
+  line-height: 1.125;
+}
+.highlighted-word {
+  color: #4f2ee8;
 }
