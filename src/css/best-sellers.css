@@ -60,12 +60,13 @@ li.book-card.books {
   cursor: pointer;
 
   transform: translateY(100%);
-  transition: transform 250ms var(--cubic);
+  transition: transform 250ms;
 }
 
 .book-card:hover .quick-view,
 .book-card:hover .quick-view {
   transform: translateY(0);
+  transition: transform 250ms;
 }
 
 .book-img {
