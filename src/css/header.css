@@ -149,6 +149,7 @@ input:checked + .slider:before {
   .header-menu {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-left: 40px;
   }
 

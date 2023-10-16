@@ -1,3 +1,17 @@
+(() => { 
+let currentURL = window.location.href;
+  let links = document.querySelectorAll('.navigation a');
+
+  for (let i = 0; i < links.length; i++) {
+  if (links[i].href === currentURL) {
+    links[i].classList.add('current-page');
+    return; 
+  }
+    }
+    })();
+
+
+
 (() => {
   const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.js-open-menu');
