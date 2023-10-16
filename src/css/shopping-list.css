@@ -312,27 +312,27 @@
 }
 
 .theme-dark .shopping-list-text {
-  color: var(--white);
+  color: #fff;
 }
 
 .theme-dark .shopping {
-  color: var(--white);
+  color: #fff;
 }
 
 .theme-dark .empty-cart-notification {
-  color: var(--white);
+  color: #fff;
 }
 
 .theme-dark .shopping-list-title {
-  color: var(--white);
+  color: #fff;
 }
 
 .theme-dark .shopping-list-item {
-  background-color: var(--black);
+  background-color: #111;
 }
 
 .theme-dark .shopping-list-text {
-  color: var(--white);
+  color: #fff;
 }
 
 .theme-dark {
