@@ -167,7 +167,13 @@ input:checked + .slider:before {
     text-transform: uppercase;
   }
 
+  .page-link {
+    display: flex;
+    justify-content: center;
+  }
+
   .bag-icon {
+    margin-left: 4px;
     fill: var(--black);
   }
 
@@ -179,20 +185,13 @@ input:checked + .slider:before {
     color: #111;
   }
 
-  .shopping-bag-icon {
-    margin-left: 4px;
-    width: 20px;
-    height: 20px;
-  }
-
   .menu-icon {
     display: none;
   }
 
-
-@media screen and (min-width: 1440px) {
-  .header-menu {
-    margin-left: 76px;
+  @media screen and (min-width: 1440px) {
+    .header-menu {
+      margin-left: 76px;
+    }
   }
-}
 }
