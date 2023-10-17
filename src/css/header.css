@@ -168,7 +168,7 @@ input:checked + .slider:before {
   }
 
   .bag-icon {
-    stroke: var(--black);
+    fill: var(--black);
   }
 
   .current-page {
