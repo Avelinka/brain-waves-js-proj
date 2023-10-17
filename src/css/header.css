@@ -171,6 +171,10 @@ input:checked + .slider:before {
     fill: var(--black);
   }
 
+  .theme-dark .bag-icon {
+    fill: #fff;
+  }
+
   .current-page {
     font-weight: 700;
     padding: 8px 16px;
@@ -189,10 +193,9 @@ input:checked + .slider:before {
     display: none;
   }
 
-
-@media screen and (min-width: 1440px) {
-  .header-menu {
-    margin-left: 76px;
+  @media screen and (min-width: 1440px) {
+    .header-menu {
+      margin-left: 76px;
+    }
   }
-}
 }
