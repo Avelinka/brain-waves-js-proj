@@ -83,4 +83,7 @@
   else if(currentURL.endsWith(shopURL)){
     home.classList.remove('current-page');
     shop.classList.add('current-page');
+    if (localStorage.getItem('theme') === 'theme-dark') {
+      document.querySelector('.js-color-dark').style.fill = 'black';
+    }
   }})();
