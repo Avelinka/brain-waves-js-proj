@@ -9,6 +9,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(17, 17, 17, 0.4);
+  z-index: 1000;
 
   overflow-y: auto;
 
@@ -22,6 +23,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
+
 
   max-width: 335px;
   min-height: 806px;
@@ -47,6 +49,11 @@ body.modal-open {
   top: 12px;
   right: 12px;
   cursor: pointer;
+}
+
+.theme-dark .button-close:hover,
+.button-close:hover {
+  stroke: #4F2EE8;
 }
 
 .modal-img {
