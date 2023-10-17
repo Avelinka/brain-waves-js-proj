@@ -188,10 +188,11 @@ input:checked + .slider:before {
   .menu-icon {
     display: none;
   }
-}
+
 
 @media screen and (min-width: 1440px) {
   .header-menu {
     margin-left: 76px;
   }
+}
 }
