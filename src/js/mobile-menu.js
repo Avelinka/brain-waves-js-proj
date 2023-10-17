@@ -67,11 +67,11 @@
   });
 })();
 
-//Функція підсвтіки поточної сторінки 
+//Функція підсвтіки поточної сторінки
 
 (() => {
-  const pageHome = "index.html"; 
-  const shopURL = "shopping-list.html";
+  const pageHome = 'index.html';
+  const shopURL = 'shopping-list.html';
   const home = document.querySelector('.js-home');
   const shop = document.querySelector('.js-shop');
   let currentURL = window.location.href;
@@ -79,11 +79,11 @@
   if (currentURL.endsWith(pageHome)) {
     home.classList.add('current-page');
     shop.classList.remove('current-page');
-  }
-  else if(currentURL.endsWith(shopURL)){
+  } else if (currentURL.endsWith(shopURL)) {
     home.classList.remove('current-page');
     shop.classList.add('current-page');
     if (localStorage.getItem('theme') === 'theme-dark') {
       document.querySelector('.js-color-dark').style.fill = 'black';
     }
-  }})();
+  }
+})();
