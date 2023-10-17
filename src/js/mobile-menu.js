@@ -60,9 +60,9 @@
   mobileMenu.addEventListener('keydown', handleEscKeyPress);
 
   window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
-    if (!e.matches) return;
+   if (!e.matches) return;
     mobileMenu.classList.remove('is-open');
-    openMenuBtn.setAttribute('aria-expanded', false);
+   openMenuBtn.setAttribute('aria-expanded', false);
     bodyScrollLock.enableBodyScroll(document.body);
   });
 })();
@@ -71,10 +71,8 @@
 let currentURL = window.location.href;
   let links = document.querySelectorAll('.navigation a');
 
-  for (let i = 0; i < links.length; i++) {
-  if (links[i].href === currentURL) {
+ for (let i = 0; i < links.length; i++) {
+ if (links[i].href === currentURL) {
     links[i].classList.add('current-page');
-    return; 
-  }
-    }
-    })();
+   return; 
+  }  }  })();
