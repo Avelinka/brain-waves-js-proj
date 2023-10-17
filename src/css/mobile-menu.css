@@ -63,7 +63,7 @@
 }
 
 .mobile-home {
-  color: #111;
+ /** color: #111;**/
   font-weight: 700;
   line-height: 1.29;
   letter-spacing: -0.04em;
@@ -82,7 +82,7 @@
 
 .mobile-shoplist {
   display: flex;
-  color: #fff;
+  /**color: #fff;**/
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -98,10 +98,10 @@
   height: 20px;
   margin-left: 4px;
   margin-top: -2px;
-  position: absolute;
+  /**position: absolute;**/
 }
 
-.page-item {
+/**.page-item {
   color: var(--black);
 }
 
@@ -113,4 +113,4 @@
 
 .bag-icon {
   stroke: #fff;
-}
+}**/
