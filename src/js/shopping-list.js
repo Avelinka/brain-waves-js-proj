@@ -59,7 +59,8 @@ function createMarkup(arr) {
             <li class="shop-list-amazon-wrap">
             <a
               href="${buy_links[0].url}"
-              target="blank"
+              target="_blank"
+              rel="noopener noreferrer"
               ><img
               alt="${amazon.title}"
               class="marketplace-img-modal shop-list-item-link shop-list-amazon"
@@ -71,7 +72,8 @@ function createMarkup(arr) {
             <li class="shop-list-book-wrap">
             <a
               href="${buy_links[1].url}"
-              target="blank"
+              target="_blank"
+              rel="noopener noreferrer"
               ><img
               alt="${book.title}"
               class="marketplace-img-modal shop-list-item-link shop-list-book"
@@ -113,7 +115,7 @@ updateUI();
 
 function removeProduct(event) {
   let liElement = event.target.closest('.js-product');
-  let bookId = liElement.getAttribute('.data-id');
+  let bookId = liElement.getAttribute('data-id');
 
   if (liElement) {
     liElement.remove();
