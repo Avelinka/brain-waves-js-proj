@@ -17,7 +17,7 @@ export async function getBookCategories() {
     Notiflix.Notify.failure(
       'Error fetching category-list. Please try again later'
     );
-    console.log(error.message);
+    // console.log(error.message);
     return;
   }
 }
@@ -38,7 +38,7 @@ export async function getBooksByCategory(selectedCategory) {
     Notiflix.Notify.failure(
       'Error fetching category-list. Please try again later'
     );
-    console.log(error.message);
+    // console.log(error.message);
     return;
   }
 }
@@ -57,7 +57,7 @@ export async function getInformationBtId(id) {
     Notiflix.Notify.failure(
       'Error fetching category-list. Please try again later'
     );
-    console.log(error.message);
+    // console.log(error.message);
     return;
   }
 }
@@ -76,7 +76,7 @@ export async function getTopBooks() {
     Notiflix.Notify.failure(
       'Error fetching category-list. Please try again later'
     );
-    console.log(error.message);
+    // console.log(error.message);
     return;
   }
 }
