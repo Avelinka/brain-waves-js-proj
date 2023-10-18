@@ -20,16 +20,20 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/brain-waves-js-proj/assets/index-ce53d9cb.js"></script>
-    <link rel="modulepreload" crossorigin href="/brain-waves-js-proj/assets/mobile-menu-theme-be9af864.js">
-    <link rel="stylesheet" href="/brain-waves-js-proj/assets/mobile-menu-theme-f2207337.css">
+    <script type="module" crossorigin src="/brain-waves-js-proj/assets/index-ae25884f.js"></script>
+    <link rel="modulepreload" crossorigin href="/brain-waves-js-proj/assets/mobile-menu-theme-1c0184ed.js">
+    <link rel="stylesheet" href="/brain-waves-js-proj/assets/mobile-menu-theme-08adfd6d.css">
   </head>
   <body>
     <header class="header">
   <div class="header-container container">
     <div class="header-wraper">
       <div class="logo-wraper">
-        <a href="./index.html" class="header-logo">
+        <a
+          href="./index.html"
+          class="header-logo"
+          aria-label="Bookshelf logotype"
+        >
           <svg class="logo-icon" width="24" height="24">
             <use href="/brain-waves-js-proj/assets/sprite-a598f328.svg#icon-logo"></use>
           </svg>
@@ -65,7 +69,11 @@
     <div class="toggle-container">
       <div class="switcher-container">
         <label id="switch" class="switcher">
-          <input type="checkbox" id="toggle-slider" />
+          <input
+            type="checkbox"
+            id="toggle-slider"
+            aria-labelledby="light/dark theme switcher"
+          />
           <span class="slider round"></span>
         </label>
       </div>
