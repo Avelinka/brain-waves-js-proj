@@ -57,7 +57,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
- 
+
   gap: 16px;
   width: 118px;
 }
@@ -114,7 +114,7 @@
 .mobile-current-page-link {
   color: #111;
   font-weight: 700;
-  fill: #111;
+  /* fill: #111; */
 }
 
 .mobile-current-page-back {
