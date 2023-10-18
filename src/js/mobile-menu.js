@@ -63,7 +63,6 @@
     if (!e.matches) return;
     mobileMenu.classList.remove('is-open');
     openMenuBtn.setAttribute('aria-expanded', false);
-    bodyScrollLock.enableBodyScroll(document.body);
   });
 })();
 
@@ -82,7 +81,10 @@
   } else if (currentURL.endsWith(shopURL)) {
     home.classList.remove('current-page');
     shop.classList.add('current-page');
-    if (localStorage.getItem('theme') === 'theme-dark') {
+    if (
+      localStorage.getItem('theme') === 'theme-dark' ||
+      localStorage.getItem('sliderPosition') === 'left'
+    ) {
       document.querySelector('.js-color-dark').style.fill = 'black';
     }
   }

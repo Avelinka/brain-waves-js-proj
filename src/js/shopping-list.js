@@ -51,7 +51,7 @@ function createMarkup(arr) {
               <h2 class="shopping-list-author">${author}</h2>
             </div>
             <button type="button" class="js-remove shop-list-trash-btn" data-id="${title}">
-              <svg class="bag-icon" width="16" height="16">
+              <svg class="shopping-list-bag-icon" width="16" height="16">
                 <use href=${imgUrl}></use>
               </svg>
             </button>

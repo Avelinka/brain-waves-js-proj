@@ -151,6 +151,11 @@
   justify-content: center;
 }
 
+.shopping-list-bag-icon {
+  width: 16px;
+  height: 16px;
+}
+
 .shop-list-amazon-wrap {
   position: absolute;
   bottom: 14px;
@@ -226,6 +231,11 @@
     right: 24px;
     width: 34px;
     height: 34px;
+  }
+
+  .shopping-list-bag-icon {
+    width: 18px;
+    height: 18px;
   }
 
   .shop-item-div {
