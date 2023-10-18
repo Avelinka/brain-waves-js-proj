@@ -323,18 +323,6 @@
 }
 
 /*dark*/
-.theme-dark .home-link {
-  color: var(--white);
-}
-
-.theme-dark .shopping-list-text {
-  color: #fff;
-}
-
-.theme-dark .shopping {
-  color: #fff;
-}
-
 .theme-dark .shop-list-text {
   color: #fff;
 }
@@ -343,22 +331,10 @@
   color: #fff;
 }
 
-.theme-dark .shopping-list-title {
-  color: #fff;
-}
-
 .theme-dark .shopping-list-item {
   background-color: #111;
 }
 
-.theme-dark .shopping-list-text {
-  color: #fff;
-}
-
 .theme-dark .shop-list-book {
   filter: grayscale(100%);
-}
-
-.theme-dark {
-  background-color: rgba(32, 32, 36, 1);
 }

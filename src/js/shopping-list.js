@@ -42,7 +42,7 @@ function createMarkup(arr) {
         <li data-id="${_id}" class="js-product shopping-list-item">
           <div class="shop-list-item-box">
             <div class="shop-list-img-wrap">
-              <img src="${book_image}" alt="${title}" class="shop-list-img"/> 
+              <img src="${book_image}" alt="${title}" loading="lazy" class="shop-list-img"/> 
             </div>
             <div class="shop-item-div">
               <h2 class="shopping-list-title">${title}</h2>
@@ -133,7 +133,7 @@ removeButtons.forEach(function (button) {
   button.addEventListener('click', removeProduct);
 });
 
-function  createEmptyCart() {
+function createEmptyCart() {
   emptyElement.style.display = 'flex';
   shopList.style.display = 'none';
   shopList.innerHTML = '';
