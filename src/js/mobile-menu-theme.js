@@ -3,18 +3,15 @@ const page1Home = document.getElementById('style-home');
 const page1HomeLink = document.querySelector('.mobile-home');
 const page2Shopping = document.getElementById('style-shopping');
 const page2ShoppingLink = document.querySelector('.mobile-shoplist');
-const page2ShoppingVar = document.getElementById('style-shopping-var');
 
 if (currentPageURL.includes('index.html')) {
-  page1Home.style.backgroundColor = 'var(--yellow)';
-  page1HomeLink.style.fontWeight = '700';
-  page1HomeLink.style.color = '#111';
-  page2Shopping.style.color = '#fff';
-  page2ShoppingVar.style.fill = '#fff';
+  page1Home.classList.add('mobile-current-page-back');
+  page2Shopping.classList.remove('mobile-current-page-back');
+  page1HomeLink.classList.add('mobile-current-page-link');
+  page2ShoppingLink.classList.remove('mobile-current-page-link');
 } else if (currentPageURL.includes('shopping-list.html')) {
-  page2Shopping.style.backgroundColor = 'var(--yellow)';
-  page2ShoppingLink.style.fontWeight = '700';
-  page2ShoppingLink.style.color = '#111';
-  page1Home.style.color = '#fff';
-  page2ShoppingVar.style.fill = '#111';
+  page2Shopping.classList.add('mobile-current-page-back');
+  page1Home.classList.remove('mobile-current-page-back');
+  page2ShoppingLink.classList.add('mobile-current-page-link');
+  page1HomeLink.classList.remove('mobile-current-page-link');
 }
