@@ -99,6 +99,7 @@ funds.forEach(fund => {
   if (fund.img) {
     const fundImage = document.createElement('img');
     fundImage.src = fund.img;
+    fundImage.alt = fund.title;
     if (window.devicePixelRatio >= 2) {
       fundImage.srcset = `${fund.img2x} 2x, ${fund.img} 1x`;
     }
