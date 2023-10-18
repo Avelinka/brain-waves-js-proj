@@ -94,13 +94,13 @@ body.modal-open {
   display: flex;
   align-items: center;
   margin: 14px 0 0;
+  gap: 20px;
 }
 
 .marketplace-img-modal {
   filter: grayscale(100%);
   min-width: 62px;
   min-height: 19px;
-  padding-right: 20px;
 }
 
 .book-img-modal {
