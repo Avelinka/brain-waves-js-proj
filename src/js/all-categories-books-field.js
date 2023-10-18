@@ -10,7 +10,7 @@ export async function createCategoryMarkap(arr) {
         }
         const oneCategory = createBookMarkup(categoryObj)
         return `<div class="category-box">
-        <h3 class = "category-titel">${categoryObj.list_name}</h3>
+        <h2 class = "category-titel">${categoryObj.list_name}</h2>
         <ul class="books-list">
             ${oneCategory}
         </ul>
@@ -27,7 +27,7 @@ export async function createCategoryMarkap(arr) {
                 <img class = "book-img" src="${book_image}" alt="${title}">
                 <div class="quick-view" data-id-book="${_id}"><p>quick view</p></div>
                 </div>
-                <h4 class="book-name">${title}</h4>
+                <h3 class="book-name">${title}</h3>
                 <p class="author">${author}</p>
             </li>`
     }).join('');
