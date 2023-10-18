@@ -2,7 +2,11 @@
   <div class="header-container container">
     <div class="header-wraper">
       <div class="logo-wraper">
-        <a href="./index.html" class="header-logo">
+        <a
+          href="./index.html"
+          class="header-logo"
+          aria-label="Bookshelf logotype"
+        >
           <svg class="logo-icon" width="24" height="24">
             <use href="/images/sprite.svg#icon-logo"></use>
           </svg>
@@ -38,7 +42,11 @@
     <div class="toggle-container">
       <div class="switcher-container">
         <label id="switch" class="switcher">
-          <input type="checkbox" id="toggle-slider" />
+          <input
+            type="checkbox"
+            id="toggle-slider"
+            aria-labelledby="light/dark theme switcher"
+          />
           <span class="slider round"></span>
         </label>
       </div>

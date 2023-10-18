@@ -26,7 +26,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 247px;
+  padding-top: 247px;
+  margin-bottom: 125px;
 }
 
 /** background image **/
@@ -35,7 +36,6 @@
   background-image: url(/images/group_6.png);
   width: 100%;
   height: 100%;
-  margin-top: 125px;
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -44,7 +44,6 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     background: url(/images/group_6@2x.png);
-    margin-top: 125px;
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
