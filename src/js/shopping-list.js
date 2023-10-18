@@ -91,9 +91,7 @@ function createMarkup(arr) {
 
 function updateUI() {
   if (products.length === 0) {
-    emptyElement.style.display = 'flex';
-    shopList.style.display = 'none';
-    shopList.innerHTML = '';
+    createEmptyCart();
   } else {
     emptyElement.style.display = 'none';
     shopList.style.display = 'block';
@@ -125,9 +123,18 @@ function removeProduct(event) {
     );
     shopingListArr.splice(indexBookToDelete, 1);
     localStorage.setItem(storageKey, JSON.stringify(shopingListArr));
+    if (shopingListArr.length === 0) {
+      createEmptyCart();
+    }
   }
 }
 
 removeButtons.forEach(function (button) {
   button.addEventListener('click', removeProduct);
 });
+
+function  createEmptyCart() {
+  emptyElement.style.display = 'flex';
+  shopList.style.display = 'none';
+  shopList.innerHTML = '';
+}
