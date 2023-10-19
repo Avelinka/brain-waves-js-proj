@@ -170,6 +170,7 @@ input:checked + .slider:before {
   }
 
   .page-link {
+    font-family: 'DM Sans', sans-serif;
     display: flex;
     justify-content: center;
   }
