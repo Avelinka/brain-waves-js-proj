@@ -20,11 +20,12 @@
 
 @media screen and (min-width: 768px) {
   .all-category {
+    width: 337px;
     height: 472px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1440px) {
   .all-category {
     width: 356px;
   }
