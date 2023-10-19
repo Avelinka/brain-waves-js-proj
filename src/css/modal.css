@@ -24,7 +24,6 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-
   max-width: 335px;
   min-height: 806px;
   background-color: var(--white);
@@ -53,7 +52,7 @@ body.modal-open {
 
 .theme-dark .button-close:hover,
 .button-close:hover {
-  stroke: #4F2EE8;
+  stroke: #4f2ee8;
 }
 
 .modal-img {
@@ -118,21 +117,22 @@ body.modal-open {
 }
 
 .theme-dark .marketplace-img-modal {
-  filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
 }
 
-.theme-dark .book-img-modal{
+.theme-dark .book-img-modal {
   filter: grayscale(100%);
 }
 
 .theme-dark .marketplace-img-modal:hover,
-.theme-dark .book-img-modal:hover{
+.theme-dark .book-img-modal:hover {
   filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
 .shopping-button-modal {
-  display: block;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 14px 28px;
 
   border-radius: 40px;
@@ -230,8 +230,8 @@ body.modal-open {
   .shopping-button-modal {
     /* замість 94px має бути 100, але так воно ламається
     ще думаю, як це виправити */
-    padding: 20px 94px;
-
+    width: 499px;
+    height: 64px;
     margin: 40px auto 0;
 
     font-size: 18px;
