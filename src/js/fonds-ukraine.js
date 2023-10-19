@@ -123,6 +123,7 @@ const Slider = new Splide('#sliderOne', {
   height: '292px',
   dynamicSlides: true,
   rewind: true,
+  label: 'Сharitable funds of Ukraine',
 });
 
 Slider.mount();
