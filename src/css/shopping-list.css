@@ -31,10 +31,11 @@
 
 .empty-cart-notification {
   width: 244px;
-  line-height: 18px;
-  letter-spacing: -0.02em;
+  line-height: 1.29;
+  letter-spacing: -0.28px;
   text-align: center;
-  color: #00000099;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .empty-cart-img {
@@ -110,6 +111,7 @@
 }
 
 .shop-list-text {
+  font-size: 14px;
   max-width: 193px;
   color: #111;
   line-height: 1.29;
@@ -329,7 +331,7 @@
 }
 
 .theme-dark .empty-cart-notification {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .theme-dark .shopping-list-item {
